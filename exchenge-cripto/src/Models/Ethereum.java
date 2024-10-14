@@ -1,7 +1,7 @@
 package Models;
 
-public class Ethereum extends Moeda{
-
+public class Ethereum extends Moeda implements Tarifacao{
+    
     public Ethereum(String tipo, double valor) {
         super(tipo, valor);
     }
@@ -26,5 +26,8 @@ public class Ethereum extends Moeda{
         this.valor = valor;
     }
     
-    
+    @Override
+    public double calculaTaxa(double valor, double taxa){
+        return valor * taxa;
+    } 
 }

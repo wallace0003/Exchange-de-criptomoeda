@@ -1,6 +1,6 @@
 package Models;
 
-public class Bitcoin extends Moeda{
+public class Bitcoin extends Moeda implements Tarifacao{
 
     public Bitcoin(String tipo, double valor) {
         super(tipo, valor);
@@ -31,6 +31,11 @@ public class Bitcoin extends Moeda{
     @Override
     public void setValor(double valor) {
         this.valor = valor;
+    }
+    
+    @Override
+    public double calculaTaxa(double valor, double taxa){
+        return valor * taxa;
     }
     
     
