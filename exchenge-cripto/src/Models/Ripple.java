@@ -2,7 +2,7 @@
 package Models;
 
 
-public class Ripple extends Moeda {
+public class Ripple extends Moeda implements Tarifacao {
 
     public Ripple(String tipo, double valor) {
         super(tipo, valor);
@@ -26,6 +26,11 @@ public class Ripple extends Moeda {
     @Override
     public void setValor(double valor) {
         this.valor = valor;
+    }
+    
+    @Override
+    public double calculaTaxa(double valor, double taxa){
+        return valor * taxa;
     }
     
     

@@ -1,7 +1,7 @@
 package Models;
 
 
-public class Real extends Moeda{
+public class Real extends Moeda implements Tarifacao{
 
     public Real(String tipo, double valor) {
         super(tipo, valor);
@@ -26,4 +26,10 @@ public class Real extends Moeda{
     public void setValor(double valor) {
         this.valor = valor;
     }
+    
+    @Override
+    public double calculaTaxa(double valor, double taxa){
+        return valor * taxa;
+    }
+    
 }
