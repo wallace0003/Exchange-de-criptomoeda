@@ -1,5 +1,5 @@
 
-package Models;
+package model;
 
 
 public class Moeda{

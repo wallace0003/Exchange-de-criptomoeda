@@ -1,4 +1,4 @@
-package Models;
+package model;
 
 public class Bitcoin extends Moeda implements Tarifacao{
 

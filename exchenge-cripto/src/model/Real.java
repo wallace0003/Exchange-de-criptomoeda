@@ -1,10 +1,9 @@
+package model;
 
-package Models;
 
+public class Real extends Moeda implements Tarifacao{
 
-public class Ripple extends Moeda implements Tarifacao {
-
-    public Ripple(String tipo, double valor) {
+    public Real(String tipo, double valor) {
         super(tipo, valor);
     }
 
@@ -31,6 +30,6 @@ public class Ripple extends Moeda implements Tarifacao {
     @Override
     public double calculaTaxa(double valor, double taxa){
         return valor * taxa;
-    }    
+    }
     
 }
