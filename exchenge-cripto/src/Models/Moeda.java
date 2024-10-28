@@ -2,7 +2,7 @@
 package Models;
 
 
-public class Moeda {
+public class Moeda{
     String tipo;
     double valor;
 
