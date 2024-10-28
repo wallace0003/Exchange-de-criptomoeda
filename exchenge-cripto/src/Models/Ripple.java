@@ -31,7 +31,6 @@ public class Ripple extends Moeda implements Tarifacao {
     @Override
     public double calculaTaxa(double valor, double taxa){
         return valor * taxa;
-    }
-    
+    }    
     
 }
