@@ -41,16 +41,14 @@ public class ControllerCadastro {
                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){
             JOptionPane.showMessageDialog(viewCadastro, "Investidor "
-                                          + "não cadastrado!",
+                                          + "não cadastrado!"+ e.getMessage(),
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }}
-        
         else{
             JOptionPane.showMessageDialog(viewCadastro, 
                                     "A senha deve conter exatamente 6 números."
                                      + "CPF deve conter 11 números exatamente.",
                                     "Erro", JOptionPane.ERROR_MESSAGE);
-        }
-        
+        } 
     }
 }

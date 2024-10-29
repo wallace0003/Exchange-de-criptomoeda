@@ -13,7 +13,7 @@ public class InvestidorDAO {
     }
     
     public void inserir(Investidor investidor) throws SQLException {
-    String sql = "INSERT INTO aluno (nome, cpf, senha, real, bitcoin, "
+    String sql = "INSERT INTO investidores.investidor (nome, cpf, senha, real, bitcoin, "
                 + "ethereum, ripple) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try (PreparedStatement stmt = conn.prepareStatement(sql)) {

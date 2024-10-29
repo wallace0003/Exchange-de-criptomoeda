@@ -1,9 +1,13 @@
 
 package exchenge.cripto;
 
+import view.LoginFrame;
+
 public class ExchengeCripto {
     public static void main(String[] args) {
-            System.out.println("Testando o github...");
-    }
-    
+            LoginFrame janela = new LoginFrame();
+            janela.setVisible(true);
+    } 
 }
+
+    

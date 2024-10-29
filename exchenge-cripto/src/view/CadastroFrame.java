@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerCadastro;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,6 +20,7 @@ public class CadastroFrame extends javax.swing.JFrame {
      */
     public CadastroFrame() {
         initComponents();
+        c = new ControllerCadastro(this);
     }
 
     public void setjLabel1(JLabel jLabel1) {
@@ -117,8 +119,18 @@ public class CadastroFrame extends javax.swing.JFrame {
         jLabel3.setText("Senha:");
 
         jbCadastrar.setText("Cadastrar");
+        jbCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCadastrarActionPerformed(evt);
+            }
+        });
 
         jbvoltarLogar.setText("Voltar");
+        jbvoltarLogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbvoltarLogarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,6 +186,16 @@ public class CadastroFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCadastrarActionPerformed
+        c.cadastrarInvestido();
+    }//GEN-LAST:event_jbCadastrarActionPerformed
+
+    private void jbvoltarLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbvoltarLogarActionPerformed
+        this.dispose();
+        viewLogin = new LoginFrame();
+        viewLogin.setVisible(true);
+    }//GEN-LAST:event_jbvoltarLogarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,7 +230,8 @@ public class CadastroFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerCadastro c;
+    private LoginFrame viewLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
