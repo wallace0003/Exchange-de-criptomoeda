@@ -12,7 +12,7 @@ public class InvestidorDAO {
         this.conn = conn;
     }
     
-    public void inserir(Investidor investidor) throws SQLException {
+    public void inserir (Investidor investidor) throws SQLException {
     String sql = "INSERT INTO investidores.investidor (nome, cpf, senha, real, bitcoin, "
                 + "ethereum, ripple) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -25,6 +25,24 @@ public class InvestidorDAO {
         stmt.setDouble(6, 0.0);  // Valor para "ethereum"
         stmt.setDouble(7, 0.0);  // Valor para "ripple"
         stmt.executeUpdate();
+        }
     }
-}
+    
+    public ResultSet consultar (Investidor investidor)throws SQLException{
+        //Este comando é vunerável
+        //String sql = "select * from aluno where usuario = '"
+              //  + aluno.getUsuario() + "' AND senha = '"
+               // + aluno.getSenha() + "'";
+        String sql = "select * from investidores.investidor"
+                     + " where usuario = ? AND senha = ?";
+        
+        PreparedStatement statement =  conn.prepareStatement(sql);
+        statement.setString(1, investidor.getCpf());
+        statement.setString(2, investidor.getSenha());
+        statement.execute();
+        ResultSet resultado = statement.getResultSet();
+        return resultado;
+    }
+    
+    
 }
