@@ -7,13 +7,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import view.MenuFrame;
 
 
 public class ControllerLogin {
     private LoginFrame loginFrame;
+    private MenuFrame menuFrame;
 
-    public ControllerLogin(LoginFrame loginFrame) {
-        this.loginFrame = loginFrame;
+    public ControllerLogin(LoginFrame loginFrame,
+            MenuFrame menuFrame) {
+            this.loginFrame = loginFrame;
+            this.menuFrame = menuFrame;
     }
     
     public void realizarLogin(){
@@ -28,6 +32,8 @@ public class ControllerLogin {
             if(res.next()){
                 JOptionPane.showMessageDialog(loginFrame, "Login efetuado",
                             "aviso", JOptionPane.INFORMATION_MESSAGE);
+                loginFrame.setVisible(false);
+                menuFrame.setVisible(true);
                 
             } else{
                 JOptionPane.showMessageDialog(loginFrame, 

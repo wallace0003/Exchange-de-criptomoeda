@@ -10,13 +10,11 @@ import javax.swing.JTextField;
 
 
 public class LoginFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
+    
     public LoginFrame() {
         initComponents();
-        cLogin = new ControllerLogin(this);
+        menuFrame = new MenuFrame();
+        cLogin = new ControllerLogin(this, menuFrame);
     }
 
     public void setCadastroFrame(CadastroFrame cadastroFrame) {
