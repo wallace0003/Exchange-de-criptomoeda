@@ -1,6 +1,11 @@
 
 package view;
 
+import controller.ControllerLogin;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 
 
 
@@ -11,7 +16,76 @@ public class LoginFrame extends javax.swing.JFrame {
      */
     public LoginFrame() {
         initComponents();
+        cLogin = new ControllerLogin(this);
     }
+
+    public void setCadastroFrame(CadastroFrame cadastroFrame) {
+        this.cadastroFrame = cadastroFrame;
+    }
+
+    public void setMenuFrame(MenuFrame menuFrame) {
+        this.menuFrame = menuFrame;
+    }
+
+    public void setBuCadastro(JButton buCadastro) {
+        this.buCadastro = buCadastro;
+    }
+
+    public void setBuEntrar(JButton buEntrar) {
+        this.buEntrar = buEntrar;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setTextCpf(JTextField textCpf) {
+        this.textCpf = textCpf;
+    }
+
+    public void setTextSenha(JTextField textSenha) {
+        this.textSenha = textSenha;
+    }
+    
+    
+
+    public CadastroFrame getCadastroFrame() {
+        return cadastroFrame;
+    }
+
+    public MenuFrame getMenuFrame() {
+        return menuFrame;
+    }
+
+    public JButton getBuCadastro() {
+        return buCadastro;
+    }
+
+    public JButton getBuEntrar() {
+        return buEntrar;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JTextField getTextCpf() {
+        return textCpf;
+    }
+
+    public JTextField getTextSenha() {
+        return textSenha;
+    }
+    
+    
 
     
     @SuppressWarnings("unchecked")
@@ -27,7 +101,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        buCadastro.setBackground(new java.awt.Color(0, 0, 0));
+        buCadastro.setBackground(new java.awt.Color(255, 255, 255));
         buCadastro.setFont(new java.awt.Font("URW Bookman", 1, 24)); // NOI18N
         buCadastro.setForeground(new java.awt.Color(153, 0, 0));
         buCadastro.setText("Cadastrar");
@@ -38,7 +112,7 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
-        buEntrar.setBackground(new java.awt.Color(0, 0, 0));
+        buEntrar.setBackground(new java.awt.Color(255, 255, 255));
         buEntrar.setFont(new java.awt.Font("URW Bookman", 1, 24)); // NOI18N
         buEntrar.setForeground(new java.awt.Color(153, 0, 0));
         buEntrar.setText("Entrar");
@@ -114,45 +188,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buCadastroActionPerformed
 
     private void buEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buEntrarActionPerformed
-        // TODO add your handling code here:
+        cLogin.realizarLogin();
     }//GEN-LAST:event_buEntrarActionPerformed
 
     private void textSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textSenhaActionPerformed
 
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Login().setVisible(true);
-//            }
-//        });
-//    }
-
+    
+    private ControllerLogin cLogin;
     private CadastroFrame cadastroFrame;
     private MenuFrame menuFrame;
     // Variables declaration - do not modify//GEN-BEGIN:variables

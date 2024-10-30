@@ -34,7 +34,7 @@ public class InvestidorDAO {
               //  + aluno.getUsuario() + "' AND senha = '"
                // + aluno.getSenha() + "'";
         String sql = "select * from investidores.investidor"
-                     + " where usuario = ? AND senha = ?";
+                     + " where cpf = ? AND senha = ?";
         
         PreparedStatement statement =  conn.prepareStatement(sql);
         statement.setString(1, investidor.getCpf());
