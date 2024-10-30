@@ -136,30 +136,44 @@ public class MenuFrame extends javax.swing.JFrame {
         jLCpf = new javax.swing.JLabel();
         jLNome = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        buConsultarSaldo.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buConsultarSaldo.setBackground(new java.awt.Color(255, 255, 255));
+        buConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buConsultarSaldo.setForeground(new java.awt.Color(255, 0, 0));
         buConsultarSaldo.setText("Consultar Saldo");
 
-        buConsultarExtrato.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buConsultarExtrato.setBackground(new java.awt.Color(255, 255, 255));
+        buConsultarExtrato.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buConsultarExtrato.setForeground(new java.awt.Color(255, 0, 0));
         buConsultarExtrato.setText("Consultar extrato");
 
-        buDepositar.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buDepositar.setBackground(new java.awt.Color(255, 255, 255));
+        buDepositar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buDepositar.setForeground(new java.awt.Color(255, 0, 0));
         buDepositar.setText("Depositar");
 
-        buSacar.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buSacar.setBackground(new java.awt.Color(255, 255, 255));
+        buSacar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buSacar.setForeground(new java.awt.Color(255, 0, 0));
         buSacar.setText("Sacar");
 
-        buComprarCri.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buComprarCri.setBackground(new java.awt.Color(255, 255, 255));
+        buComprarCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buComprarCri.setForeground(new java.awt.Color(255, 0, 0));
         buComprarCri.setText("Comprar Criptomoedas");
 
-        buVenderCri.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buVenderCri.setBackground(new java.awt.Color(255, 255, 255));
+        buVenderCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buVenderCri.setForeground(new java.awt.Color(255, 0, 0));
         buVenderCri.setText("Vender Criptomoedas");
 
-        buAtualizarCota.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buAtualizarCota.setBackground(new java.awt.Color(255, 255, 255));
+        buAtualizarCota.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buAtualizarCota.setForeground(new java.awt.Color(255, 0, 0));
         buAtualizarCota.setText("Atualizar cotações");
 
-        buSair.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 3, 14)); // NOI18N
+        buSair.setBackground(new java.awt.Color(255, 255, 255));
+        buSair.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
+        buSair.setForeground(new java.awt.Color(255, 0, 0));
         buSair.setText("Sair");
         buSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,16 +182,18 @@ public class MenuFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("CPF:");
 
         jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Nome:");
 
-        jLCpf.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-        jLCpf.setText("Nome:");
+        jLCpf.setFont(new java.awt.Font("URW Bookman", 3, 12)); // NOI18N
+        jLCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
-        jLNome.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-        jLNome.setText("Nome:");
+        jLNome.setFont(new java.awt.Font("URW Bookman", 3, 12)); // NOI18N
+        jLNome.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,18 +203,16 @@ public class MenuFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLCpf))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLNome)))
+                            .addComponent(jLCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(jLNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 86, Short.MAX_VALUE)
+                        .addGap(0, 92, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(buSair, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,14 +236,14 @@ public class MenuFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jLCpf))
+                    .addComponent(jLCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLNome))
+                    .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +269,7 @@ public class MenuFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buSairActionPerformed
