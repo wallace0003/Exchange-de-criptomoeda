@@ -11,19 +11,16 @@ import javax.swing.JTextField;
 
 public class LoginFrame extends javax.swing.JFrame {
     
-    public LoginFrame() {
+    public LoginFrame(ControllerLogin cLogin){
         initComponents();
-        menuFrame = new MenuFrame();
-        cLogin = new ControllerLogin(this, menuFrame);
+        this.cLogin = cLogin;
     }
 
     public void setCadastroFrame(CadastroFrame cadastroFrame) {
         this.cadastroFrame = cadastroFrame;
     }
 
-    public void setMenuFrame(MenuFrame menuFrame) {
-        this.menuFrame = menuFrame;
-    }
+   
 
     public void setBuCadastro(JButton buCadastro) {
         this.buCadastro = buCadastro;
@@ -55,9 +52,7 @@ public class LoginFrame extends javax.swing.JFrame {
         return cadastroFrame;
     }
 
-    public MenuFrame getMenuFrame() {
-        return menuFrame;
-    }
+    
 
     public JButton getBuCadastro() {
         return buCadastro;
@@ -82,10 +77,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public JTextField getTextSenha() {
         return textSenha;
     }
-    
-    
-
-    
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -180,9 +172,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buCadastroActionPerformed
-        cadastroFrame = new CadastroFrame();
-        cadastroFrame.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_buCadastroActionPerformed
 
     private void buEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buEntrarActionPerformed
@@ -196,7 +186,6 @@ public class LoginFrame extends javax.swing.JFrame {
     
     private ControllerLogin cLogin;
     private CadastroFrame cadastroFrame;
-    private MenuFrame menuFrame;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buCadastro;
     private javax.swing.JButton buEntrar;

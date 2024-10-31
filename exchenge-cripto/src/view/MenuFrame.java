@@ -1,6 +1,4 @@
-
 package view;
-
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -11,8 +9,9 @@ import javax.swing.JLabel;
 public class MenuFrame extends javax.swing.JFrame {
     
     
-    public MenuFrame() {
+    public MenuFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
     
     public void setjLNome(String nome) {
@@ -241,9 +240,9 @@ public class MenuFrame extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,9 +272,11 @@ public class MenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buSairActionPerformed
-        this.setVisible(false);
+        cLogin.sair();
     }//GEN-LAST:event_buSairActionPerformed
-
+    
+    
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buAtualizarCota;
     private javax.swing.JButton buComprarCri;
