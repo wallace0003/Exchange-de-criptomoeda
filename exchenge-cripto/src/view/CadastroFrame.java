@@ -1,10 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
-
-
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -101,15 +95,18 @@ public class CadastroFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel1.setText("Nome:");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel2.setText("CPF:");
 
-        jLabel3.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel3.setText("Senha:");
 
+        jbCadastrar.setBackground(new java.awt.Color(255, 255, 255));
+        jbCadastrar.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jbCadastrar.setForeground(new java.awt.Color(255, 0, 0));
         jbCadastrar.setText("Cadastrar");
         jbCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +114,9 @@ public class CadastroFrame extends javax.swing.JFrame {
             }
         });
 
+        jbvoltarLogar.setBackground(new java.awt.Color(255, 255, 255));
+        jbvoltarLogar.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jbvoltarLogar.setForeground(new java.awt.Color(255, 0, 0));
         jbvoltarLogar.setText("Voltar");
         jbvoltarLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +151,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbvoltarLogar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +172,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                 .addComponent(jbCadastrar)
                 .addGap(18, 18, 18)
                 .addComponent(jbvoltarLogar)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
