@@ -4,7 +4,8 @@
  */
 package view;
 
-import controller.ControllerCadastro;
+
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -13,9 +14,9 @@ import javax.swing.JTextField;
 public class CadastroFrame extends javax.swing.JFrame {
 
     
-    public CadastroFrame() {
+    public CadastroFrame(ControllerLogin cLogin) {
         initComponents();
-        c = new ControllerCadastro(this);
+        this.cLogin = cLogin;
     }
 
     public void setjLabel1(JLabel jLabel1) {
@@ -178,15 +179,15 @@ public class CadastroFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCadastrarActionPerformed
-        c.cadastrarInvestido();
+        cLogin.cadastrarInvestido();
     }//GEN-LAST:event_jbCadastrarActionPerformed
 
     private void jbvoltarLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbvoltarLogarActionPerformed
-        this.dispose();
+        cLogin.cadastroParaLogin();
     }//GEN-LAST:event_jbvoltarLogarActionPerformed
 
 
-    private ControllerCadastro c;
+    private ControllerLogin cLogin;
     private LoginFrame viewLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
