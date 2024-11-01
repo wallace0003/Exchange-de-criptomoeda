@@ -1,14 +1,14 @@
-package Models;
+package model;
 
 
 public class Carteira {
-    private Moeda real, ripple, bitcoin, erhereum;
+    private Moeda real, ripple, bitcoin, ethereum;
 
-    public Carteira(Moeda real, Moeda ripple, Moeda bitcoin, Moeda erhereum) {
+    public Carteira(Moeda real, Moeda ripple, Moeda bitcoin, Moeda ethereum) {
         this.real = real;
         this.ripple = ripple;
         this.bitcoin = bitcoin;
-        this.erhereum = erhereum;
+        this.ethereum = ethereum;
     }
 
     public Moeda getReal() {
@@ -24,7 +24,7 @@ public class Carteira {
     }
 
     public Moeda getErhereum() {
-        return erhereum;
+        return ethereum;
     }
 
     public void setReal(Moeda real) {
@@ -40,7 +40,7 @@ public class Carteira {
     }
 
     public void setErhereum(Moeda erhereum) {
-        this.erhereum = erhereum;
+        this.ethereum = erhereum;
     }
     
 }
