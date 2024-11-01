@@ -1,20 +1,166 @@
 
 package view;
 
+import controller.ControllerLogin;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 public class ConsulSaldoFrame extends javax.swing.JFrame {
 
     
-    public ConsulSaldoFrame() {
+    public ConsulSaldoFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
+
+    public void setcLogin(ControllerLogin cLogin) {
+        this.cLogin = cLogin;
+    }
+
+    public void setjBConsultarSaldo(JButton jBConsultarSaldo) {
+        this.jBConsultarSaldo = jBConsultarSaldo;
+    }
+
+    public void setjBMenu(JButton jBMenu) {
+        this.jBMenu = jBMenu;
+    }
+
+    public void setjLNome(JLabel jLNome) {
+        this.jLNome = jLNome;
+    }
+
+    public void setjLValorBitcoin(JLabel jLValorBitcoin) {
+        this.jLValorBitcoin = jLValorBitcoin;
+    }
+
+    public void setjLValorEthereum(JLabel jLValorEthereum) {
+        this.jLValorEthereum = jLValorEthereum;
+    }
+
+    public void setjLValorRipple(JLabel jLValorRipple) {
+        this.jLValorRipple = jLValorRipple;
+    }
+
+    
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public void setjLvalorReais(JLabel jLvalorReais) {
+        this.jLvalorReais = jLvalorReais;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public void setTextSenha(JTextField textSenha) {
+        this.textSenha = textSenha;
+    }
+
+    public ControllerLogin getcLogin() {
+        return cLogin;
+    }
+
+    public JButton getjBConsultarSaldo() {
+        return jBConsultarSaldo;
+    }
+
+    public JButton getjBMenu() {
+        return jBMenu;
+    }
+
+    public JLabel getjLNome() {
+        return jLNome;
+    }
+
+    public JLabel getjLValorBitcoin() {
+        return jLValorBitcoin;
+    }
+
+    public JLabel getjLValorEthereum() {
+        return jLValorEthereum;
+    }
+
+    public JLabel getjLValorRipple() {
+        return jLValorRipple;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public JLabel getjLvalorReais() {
+        return jLvalorReais;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JTextField getTextSenha() {
+        return textSenha;
+    }
+    
+    
 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLNome = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -28,14 +174,9 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLValorBitcoin = new javax.swing.JLabel();
         jBMenu = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         textSenha = new javax.swing.JTextField();
         jBConsultarSaldo = new javax.swing.JButton();
-
-        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Nome:");
 
         jLNome.setBackground(new java.awt.Color(255, 255, 255));
         jLNome.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
@@ -136,6 +277,11 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jBMenu.setFont(new java.awt.Font("URW Bookman", 0, 14)); // NOI18N
         jBMenu.setForeground(new java.awt.Color(255, 0, 0));
         jBMenu.setText("Menu");
+        jBMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMenuActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 0));
@@ -173,16 +319,10 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
                                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
                                         .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 54, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -194,19 +334,11 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,15 +355,19 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void textSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSenhaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_textSenhaActionPerformed
 
     private void jBConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultarSaldoActionPerformed
-        // TODO add your handling code here:
+        cLogin.exibeSaldo();
     }//GEN-LAST:event_jBConsultarSaldoActionPerformed
 
+    private void jBMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMenuActionPerformed
+        cLogin.consulParaMenu();
+    }//GEN-LAST:event_jBMenuActionPerformed
 
 
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBConsultarSaldo;
     private javax.swing.JButton jBMenu;
@@ -239,10 +375,8 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLValorBitcoin;
     private javax.swing.JLabel jLValorEthereum;
     private javax.swing.JLabel jLValorRipple;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

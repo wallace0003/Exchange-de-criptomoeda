@@ -1,6 +1,7 @@
 
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -8,10 +9,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
-public class ConsulExtratoView extends javax.swing.JFrame {
+public class ConsulExtratoFrame extends javax.swing.JFrame {
 
-    public ConsulExtratoView() {
+    public ConsulExtratoFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     public void setBuConsultarExtrato(JButton buConsultarExtrato) {
@@ -161,7 +163,7 @@ public class ConsulExtratoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buConsultarExtrato;
     private javax.swing.JButton buMenu;

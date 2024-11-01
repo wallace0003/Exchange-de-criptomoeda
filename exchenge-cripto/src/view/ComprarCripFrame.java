@@ -1,15 +1,17 @@
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
-public class ComprarCripView extends javax.swing.JFrame {
+public class ComprarCripFrame extends javax.swing.JFrame {
 
     
-    public ComprarCripView() {
+    public ComprarCripFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     public void setBuComprarBitcoin(JButton buComprarBitcoin) {
@@ -256,7 +258,7 @@ public class ComprarCripView extends javax.swing.JFrame {
 
    
  
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buComprarBitcoin;
     private javax.swing.JButton buComprarEthereum;
