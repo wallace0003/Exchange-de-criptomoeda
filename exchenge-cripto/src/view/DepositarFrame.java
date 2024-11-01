@@ -1,12 +1,13 @@
-
 package view;
+import controller.ControllerLogin;
 
 
 public class DepositarFrame extends javax.swing.JFrame {
 
     
-    public DepositarFrame() {
+    public DepositarFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     
@@ -81,7 +82,7 @@ public class DepositarFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buDepositar;
     private javax.swing.JButton buMenu;

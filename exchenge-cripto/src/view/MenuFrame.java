@@ -139,6 +139,11 @@ public class MenuFrame extends javax.swing.JFrame {
         buConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buConsultarSaldo.setForeground(new java.awt.Color(255, 0, 0));
         buConsultarSaldo.setText("Consultar Saldo");
+        buConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buConsultarSaldoActionPerformed(evt);
+            }
+        });
 
         buConsultarExtrato.setBackground(new java.awt.Color(255, 255, 255));
         buConsultarExtrato.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
@@ -274,6 +279,10 @@ public class MenuFrame extends javax.swing.JFrame {
     private void buSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buSairActionPerformed
         cLogin.sair();
     }//GEN-LAST:event_buSairActionPerformed
+
+    private void buConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buConsultarSaldoActionPerformed
+        cLogin.menuParaConsul();
+    }//GEN-LAST:event_buConsultarSaldoActionPerformed
     
     
     private ControllerLogin cLogin;

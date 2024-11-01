@@ -16,12 +16,6 @@ public class LoginFrame extends javax.swing.JFrame {
         this.cLogin = cLogin;
     }
 
-    public void setCadastroFrame(CadastroFrame cadastroFrame) {
-        this.cadastroFrame = cadastroFrame;
-    }
-
-   
-
     public void setBuCadastro(JButton buCadastro) {
         this.buCadastro = buCadastro;
     }
@@ -44,12 +38,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
     public void setTextSenha(JTextField textSenha) {
         this.textSenha = textSenha;
-    }
-    
-    
-
-    public CadastroFrame getCadastroFrame() {
-        return cadastroFrame;
     }
 
     
@@ -185,7 +173,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
     
     private ControllerLogin cLogin;
-    private CadastroFrame cadastroFrame;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buCadastro;
     private javax.swing.JButton buEntrar;

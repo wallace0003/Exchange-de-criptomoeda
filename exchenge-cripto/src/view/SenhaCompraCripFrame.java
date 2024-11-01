@@ -1,16 +1,18 @@
 
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
-public class SenhaCopraCripView extends javax.swing.JFrame {
+public class SenhaCompraCripFrame extends javax.swing.JFrame {
 
     
-    public SenhaCopraCripView() {
+    public SenhaCompraCripFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     public void setBuEntrar(JButton buEntrar) {
@@ -107,7 +109,7 @@ public class SenhaCopraCripView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buEntrar;
     private javax.swing.JButton buVoltar;

@@ -1,15 +1,17 @@
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
-public class VendeCripView extends javax.swing.JFrame {
+public class VendeCripFrame extends javax.swing.JFrame {
 
    
-    public VendeCripView() {
+    public VendeCripFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     public void setBuMenu(JButton buMenu) {
@@ -201,11 +203,11 @@ public class VendeCripView extends javax.swing.JFrame {
                     .addComponent(buVenderBitcoin))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(buMenu))
                 .addGap(211, 211, 211))
@@ -232,9 +234,9 @@ public class VendeCripView extends javax.swing.JFrame {
                         .addComponent(jLValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(buVenderBitcoin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(48, 48, 48)
                 .addComponent(buMenu)
                 .addContainerGap())
@@ -256,7 +258,7 @@ public class VendeCripView extends javax.swing.JFrame {
     }//GEN-LAST:event_buVenderBitcoinActionPerformed
 
 
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buMenu;
     private javax.swing.JButton buVenderBitcoin;

@@ -10,24 +10,45 @@ import javax.swing.JOptionPane;
 import model.Carteira;
 import model.Moeda;
 import view.CadastroFrame;
+import view.ComprarCripFrame;
+import view.ConsulExtratoFrame;
 import view.ConsulSaldoFrame;
+import view.DepositarFrame;
 import view.MenuFrame;
+import view.SacarFrame;
+import view.SenhaCompraCripFrame;
+import view.SenhaVendeCripFrame;
+import view.VendeCripFrame;
 
 
 public class ControllerLogin {
+    private Moeda bitcoin, ripple, ethereum;
+    private Investidor investido;
     private LoginFrame loginFrame;
     private MenuFrame menuFrame;
     private ConsulSaldoFrame consulSaldoFrame;
     private CadastroFrame cadastroFrame;
-    private Moeda bitcoin, ripple, ethereum;
-    private Investidor investido;
+    private ComprarCripFrame compraCripFrame;
+    private ConsulExtratoFrame consulExtratoFrame;
+    private DepositarFrame depositarFrame;
+    private SacarFrame sacarFrame;
+    private SenhaCompraCripFrame senhaCompraCripFrame;
+    private SenhaVendeCripFrame senhaVendeCripFrame;
+    private VendeCripFrame vendeCripFrame;
 
     public ControllerLogin(){
         loginFrame = new LoginFrame(this);
         loginFrame.setVisible(true);    
         menuFrame = new MenuFrame(this);
-        consulSaldoFrame = new ConsulSaldoFrame();
+        consulSaldoFrame = new ConsulSaldoFrame(this);
         cadastroFrame = new CadastroFrame(this);
+        compraCripFrame = new ComprarCripFrame(this);
+        consulExtratoFrame = new ConsulExtratoFrame(this);
+        depositarFrame = new DepositarFrame(this);
+        sacarFrame = new SacarFrame(this);
+        senhaCompraCripFrame = new SenhaCompraCripFrame(this);
+        senhaVendeCripFrame = new SenhaVendeCripFrame(this);
+        vendeCripFrame = new VendeCripFrame(this);
     }
     
     
@@ -47,9 +68,6 @@ public class ControllerLogin {
                 String nome = res.getString("nome");
                 String cpf = res.getString("cpf");
 
-                JOptionPane.showMessageDialog(loginFrame, 
-                        "Login efetuado", "Aviso", 
-                        JOptionPane.INFORMATION_MESSAGE);
 
                 // Fechar a janela de login e abrir a janela do menu
                 loginFrame.setVisible(false);
@@ -62,7 +80,8 @@ public class ControllerLogin {
             }
             else {
                 JOptionPane.showMessageDialog(loginFrame, 
-                        "Senha ou CPF incorreto!", "Erro", JOptionPane.ERROR_MESSAGE);
+                        "Senha ou CPF incorreto!", "Erro", 
+                         JOptionPane.ERROR_MESSAGE);
                 }
         } 
     
@@ -70,7 +89,7 @@ public class ControllerLogin {
             JOptionPane.showMessageDialog(loginFrame, "Erro de conexão: " + 
                         e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
-        }
+    }
     
     public void sair(){
         menuFrame.setVisible(false);
@@ -105,8 +124,8 @@ public class ControllerLogin {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
             dao.inserir(investidor);
-            JOptionPane.showMessageDialog(cadastroFrame, "Investidor cadastrado",
-                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(cadastroFrame, "Investidor cadastrado"
+                    ,"Aviso", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){
             JOptionPane.showMessageDialog(cadastroFrame, "Investidor "
                                           + "não cadastrado!"+ e.getMessage(),
@@ -119,4 +138,71 @@ public class ControllerLogin {
                                     "Erro", JOptionPane.ERROR_MESSAGE);
         } 
     }
+    
+    public void menuParaConsul(){
+        menuFrame.setVisible(false);
+        consulSaldoFrame.setVisible(true);
+    }
+    
+    public void consulParaMenu(){
+        consulSaldoFrame.setVisible(false);
+        menuFrame.setVisible(true);
+        consulSaldoFrame.getjLvalorReais().
+                                    setText("?");
+                consulSaldoFrame.getjLValorBitcoin().
+                                   setText("?");
+                consulSaldoFrame.getjLValorRipple().
+                                    setText("?");
+                consulSaldoFrame.getjLValorEthereum().
+                                  setText("?");
+    }
+    
+    public void exibeSaldo(){
+        String senhaFornecida = consulSaldoFrame.getTextSenha().getText();
+
+        // Verifica se a senha foi fornecida
+        if (senhaFornecida.isEmpty()) {
+            JOptionPane.showMessageDialog(consulSaldoFrame, 
+                    "Por favor, insira a senha para consultar o saldo.", 
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        Investidor investidor = new Investidor(senhaFornecida, null, null, cpf);
+
+        try(Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+            ResultSet res = dao.consultar(investidor);
+
+            if (res.next()) {
+                double saldoReais = res.getDouble("real");
+                double saldoBitcoin = res.getDouble("bitcoin");
+                double saldoRipple = res.getDouble("ripple");
+                double saldoEthereum = res.getDouble("ethereum");
+
+                // Atualiza os labels com os valores de saldo
+                consulSaldoFrame.getjLvalorReais().
+                                    setText(String.format("%.2f", saldoReais));
+                consulSaldoFrame.getjLValorBitcoin().
+                                   setText(String.format("%.8f", saldoBitcoin));
+                consulSaldoFrame.getjLValorRipple().
+                                    setText(String.format("%.8f", saldoRipple));
+                consulSaldoFrame.getjLValorEthereum().
+                                  setText(String.format("%.8f", saldoEthereum));
+            }else {
+                JOptionPane.showMessageDialog(consulSaldoFrame, 
+                        "Senha incorreta! Tente novamente.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }catch(SQLException e) {
+            JOptionPane.showMessageDialog(consulSaldoFrame, 
+                    "Erro ao consultar saldo: " + e.getMessage(), "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+
+    
+    
 }

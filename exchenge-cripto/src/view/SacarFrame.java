@@ -1,13 +1,15 @@
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class SacarView extends javax.swing.JFrame {
+public class SacarFrame extends javax.swing.JFrame {
 
-    public SacarView() {
+    public SacarFrame(ControllerLogin cLogin) {
         initComponents();
+        this.cLogin = cLogin;
     }
 
     public void setBuMenu(JButton buMenu) {
@@ -121,9 +123,10 @@ public class SacarView extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(textValorSaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLSaldoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLSaldoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buSacar)
@@ -136,7 +139,7 @@ public class SacarView extends javax.swing.JFrame {
 
     
    
-
+    private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buMenu;
     private javax.swing.JButton buSacar;
