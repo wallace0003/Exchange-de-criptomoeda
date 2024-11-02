@@ -290,7 +290,7 @@ public class MenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buConsultarSaldoActionPerformed
 
     private void buDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buDepositarActionPerformed
-        // TODO add your handling code here:
+        cLogin.menuParaDepositar();
     }//GEN-LAST:event_buDepositarActionPerformed
     
     

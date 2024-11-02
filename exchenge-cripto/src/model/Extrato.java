@@ -1,10 +1,11 @@
 package model;
 
 public class Extrato extends Pessoa {
-    private Data dataOperacao;
-    private Horas horaOperacao; 
+    private String dataOperacao;
+    private String horaOperacao; 
     private double valorOperacao;
     private String tipoMoeda; 
+    private String maisOuMenos;
     
     private double saldoReal;
     private double saldoRipple;
@@ -14,13 +15,13 @@ public class Extrato extends Pessoa {
     private double taxaTransacao;
 
     
-    public Extrato(String nome, String cpf, Data dataOperacao, Horas horaOperacao, 
+    public Extrato(String nome, String cpf, String dataOperacao, String horaOperacao, 
             double valorOperacao, String tipoMoeda, double saldoReal, 
             double saldoRipple, double saldoEthereum, double saldoBitcoin, 
-            double taxaTransacao, double ct){
+            double taxaTransacao, double ct, String maisOuMenos){
         super(nome, cpf);
         this.dataOperacao = dataOperacao;
-        this.horaOperacao = horaOperacao; // Inicializando o horário
+        this.horaOperacao = horaOperacao; 
         this.valorOperacao = valorOperacao;
         this.tipoMoeda = tipoMoeda;
         this.saldoReal = saldoReal;
@@ -29,95 +30,103 @@ public class Extrato extends Pessoa {
         this.saldoBitcoin = saldoBitcoin;
         this.taxaTransacao = taxaTransacao;
         this.ct = ct;
+        this.maisOuMenos = maisOuMenos;
     }
 
-    // Getters e Setters para data e hora
-    public Data getDataOperacao() {
-        return dataOperacao;
+    public Extrato(String nome, String cpf) {
+        super(nome, cpf);
     }
-
-    public double getCt() {
-        return ct;
-    }
-
-    public void setCt(double ct) {
-        this.ct = ct;
-    }
-
-    public void setDataOperacao(Data dataOperacao) {
+    
+    
+    public void setDataOperacao(String dataOperacao) {
         this.dataOperacao = dataOperacao;
     }
 
-    public Horas getHoraOperacao() {
-        return horaOperacao;
-    }
-
-    public void setHoraOperacao(Horas horaOperacao) {
+    public void setHoraOperacao(String horaOperacao) {
         this.horaOperacao = horaOperacao;
-    }
-
-    public double getValorOperacao() {
-        return valorOperacao;
     }
 
     public void setValorOperacao(double valorOperacao) {
         this.valorOperacao = valorOperacao;
     }
 
-    public String getTipoMoeda() {
-        return tipoMoeda;
-    }
-
     public void setTipoMoeda(String tipoMoeda) {
         this.tipoMoeda = tipoMoeda;
     }
 
-    public double getSaldoReal() {
-        return saldoReal;
+    public void setMaisOuMenos(String maisOuMenos) {
+        this.maisOuMenos = maisOuMenos;
     }
 
     public void setSaldoReal(double saldoReal) {
         this.saldoReal = saldoReal;
     }
 
-    public double getSaldoRipple() {
-        return saldoRipple;
-    }
-
     public void setSaldoRipple(double saldoRipple) {
         this.saldoRipple = saldoRipple;
-    }
-
-    public double getSaldoEthereum() {
-        return saldoEthereum;
     }
 
     public void setSaldoEthereum(double saldoEthereum) {
         this.saldoEthereum = saldoEthereum;
     }
 
+    public void setSaldoBitcoin(double saldoBitcoin) {
+        this.saldoBitcoin = saldoBitcoin;
+    }
+
+    public void setCt(double ct) {
+        this.ct = ct;
+    }
+
+    // Getters e Setters para data e hora
+    public void setTaxaTransacao(double taxaTransacao) {
+        this.taxaTransacao = taxaTransacao;
+    }
+
+    public String getDataOperacao() {
+        return dataOperacao;
+    }
+
+    public String getHoraOperacao() {
+        return horaOperacao;
+    }
+
+    public double getValorOperacao() {
+        return valorOperacao;
+    }
+
+    public String getTipoMoeda() {
+        return tipoMoeda;
+    }
+
+    public String getMaisOuMenos() {
+        return maisOuMenos;
+    }
+
+    public double getSaldoReal() {
+        return saldoReal;
+    }
+
+    public double getSaldoRipple() {
+        return saldoRipple;
+    }
+
+    public double getSaldoEthereum() {
+        return saldoEthereum;
+    }
+
     public double getSaldoBitcoin() {
         return saldoBitcoin;
     }
 
-    public void setSaldoBitcoin(double saldoBitcoin) {
-        this.saldoBitcoin = saldoBitcoin;
+    public double getCt() {
+        return ct;
     }
 
     public double getTaxaTransacao() {
         return taxaTransacao;
     }
-
-    public void setTaxaTransacao(double taxaTransacao) {
-        this.taxaTransacao = taxaTransacao;
-    }
-
-    @Override
-    public String toString() {
-        return dataOperacao + " " + horaOperacao.getH() + ":" + 
-               horaOperacao.getM() + " " +(valorOperacao > 0 ? "+" : "") + 
-               valorOperacao + " " + tipoMoeda + " TX: " + taxaTransacao + 
-               " | Saldos - REAL: " + saldoReal + ", BTC: " + saldoBitcoin + 
-               ", ETH: " + saldoEthereum + ", XRP: " + saldoRipple;
-    }
+    
+     
+    
 }

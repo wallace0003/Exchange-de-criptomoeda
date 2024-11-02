@@ -31,10 +31,6 @@ public class InvestidorDAO {
     }
     
     public ResultSet consultarInvestidor (Investidor investidor)throws SQLException{
-        //Este comando é vunerável
-        //String sql = "select * from aluno where usuario = '"
-              //  + aluno.getUsuario() + "' AND senha = '"
-               // + aluno.getSenha() + "'";
         String sql = "select * from investidores.investidor"
                      + " where cpf = ? AND senha = ?";
         
@@ -46,10 +42,33 @@ public class InvestidorDAO {
         return resultado;
     }
     
+    public ResultSet consultarInvestidorPorCpf(Investidor investidor) 
+            throws SQLException {
+        String sql = "select * from investidores.investidor where cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, investidor.getCpf());
+        statement.execute();
+        return statement.getResultSet();
+    }
+    
+    public void atualizarSaldoReais(Investidor investidor, 
+                                    double novoSaldoReais) throws SQLException 
+    {
+        String sql = "UPDATE investidores.investidor SET real = ? WHERE cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        // Define o novo valor para o saldo em reais
+        statement.setDouble(1, novoSaldoReais); 
+        // Define o CPF do investidor para a busca
+        statement.setString(2, investidor.getCpf());  
+        statement.execute();
+        conn.close();
+    }
+
+    
     public void inserirExtrato (Extrato extrato) throws SQLException{
     String sql = "INSERT INTO investidores.extrato (cpf, nome, real, bitcoin, "
-            + "ethreum, ripple, taxa, tipoMoeda, valor, ct, data, hora) "
-            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            + "ethereum, ripple, taxa, tipomoeda, valor, ct, data, hora, sinal) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     try (PreparedStatement stmt = conn.prepareStatement(sql)) {
         stmt.setString(1, extrato.getCpf());
@@ -62,10 +81,10 @@ public class InvestidorDAO {
         stmt.setString(8, extrato.getTipoMoeda());
         stmt.setDouble(9, extrato.getValorOperacao());
         stmt.setDouble(10, extrato.getCt());
-        stmt.setString(11, String.valueOf(extrato.getDataOperacao()));
-        stmt.setString(12, String.valueOf(extrato.getHoraOperacao()));
+        stmt.setString(11, extrato.getDataOperacao());
+        stmt.setString(12, extrato.getHoraOperacao());
+        stmt.setString(13, extrato.getMaisOuMenos());
         stmt.executeUpdate();
         }
-    }
-    
+    } 
 }

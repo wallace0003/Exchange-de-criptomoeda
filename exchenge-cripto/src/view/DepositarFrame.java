@@ -29,8 +29,8 @@ public class DepositarFrame extends javax.swing.JFrame {
         this.jLValorAtual = jLValorAtual;
     }
 
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+    public void setjLValorAtualRef(JLabel jLValorAtualRef) {
+        this.jLValorAtualRef = jLValorAtualRef;
     }
 
     public void setjLabel3(JLabel jLabel3) {
@@ -42,7 +42,6 @@ public class DepositarFrame extends javax.swing.JFrame {
     }
     
     
-
     public ControllerLogin getcLogin() {
         return cLogin;
     }
@@ -59,8 +58,8 @@ public class DepositarFrame extends javax.swing.JFrame {
         return jLValorAtual;
     }
 
-    public JLabel getjLabel2() {
-        return jLabel2;
+    public JLabel getjLValorAtualRef() {
+        return jLValorAtualRef;
     }
 
     public JLabel getjLabel3() {
@@ -73,14 +72,13 @@ public class DepositarFrame extends javax.swing.JFrame {
     
     
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         buMenu = new javax.swing.JButton();
         buDepositar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLValorAtualRef = new javax.swing.JLabel();
         jLValorAtual = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         textValorDeposito = new javax.swing.JTextField();
@@ -99,10 +97,15 @@ public class DepositarFrame extends javax.swing.JFrame {
         buDepositar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buDepositar.setForeground(new java.awt.Color(255, 0, 0));
         buDepositar.setText("Depositar");
+        buDepositar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buDepositarActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Valor atual:");
+        jLValorAtualRef.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLValorAtualRef.setForeground(new java.awt.Color(0, 0, 0));
+        jLValorAtualRef.setText("Valor atual:");
 
         jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -117,7 +120,7 @@ public class DepositarFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(jLValorAtualRef)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLValorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -132,7 +135,7 @@ public class DepositarFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLValorAtualRef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLValorAtual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
@@ -153,13 +156,17 @@ public class DepositarFrame extends javax.swing.JFrame {
         cLogin.depositarParaMenu();
     }//GEN-LAST:event_buMenuActionPerformed
 
+    private void buDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buDepositarActionPerformed
+        cLogin.depositar();
+    }//GEN-LAST:event_buDepositarActionPerformed
+
 
     private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buDepositar;
     private javax.swing.JButton buMenu;
     private javax.swing.JLabel jLValorAtual;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLValorAtualRef;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField textValorDeposito;
     // End of variables declaration//GEN-END:variables
