@@ -36,7 +36,7 @@ public class ControllerCadastro {
         try{
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
-            dao.inserir(investidor);
+            dao.inserirInvestidor(investidor);
             JOptionPane.showMessageDialog(viewCadastro, "Investidor cadastrado",
                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){

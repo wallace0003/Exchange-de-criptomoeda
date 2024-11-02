@@ -154,6 +154,11 @@ public class MenuFrame extends javax.swing.JFrame {
         buDepositar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buDepositar.setForeground(new java.awt.Color(255, 0, 0));
         buDepositar.setText("Depositar");
+        buDepositar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buDepositarActionPerformed(evt);
+            }
+        });
 
         buSacar.setBackground(new java.awt.Color(255, 255, 255));
         buSacar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
@@ -283,6 +288,10 @@ public class MenuFrame extends javax.swing.JFrame {
     private void buConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buConsultarSaldoActionPerformed
         cLogin.menuParaConsul();
     }//GEN-LAST:event_buConsultarSaldoActionPerformed
+
+    private void buDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buDepositarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buDepositarActionPerformed
     
     
     private ControllerLogin cLogin;

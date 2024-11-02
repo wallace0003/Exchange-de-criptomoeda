@@ -52,7 +52,7 @@ public class ControllerLogin {
     }
     
     
-    //Realiza login do usuário.
+    //Construtor para a lógica do login do usuário
     public void realizarLogin(){
     Investidor investidor = new 
         Investidor(loginFrame.getTextSenha().getText(), null, null,
@@ -61,7 +61,7 @@ public class ControllerLogin {
         try {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
-            ResultSet res = dao.consultar(investidor);
+            ResultSet res = dao.consultarInvestidor(investidor);
         
             if (res.next()) {
                 // Captura o nome e o CPF do usuário logado
@@ -91,11 +91,14 @@ public class ControllerLogin {
             }
     }
     
+  
     public void sair(){
         menuFrame.setVisible(false);
         loginFrame.setVisible(true);
     }
     
+    
+    //Construtor para a lógica do cadastro.
     public void irCadastrar(){
         loginFrame.setVisible(false);
         cadastroFrame.setVisible(true);
@@ -123,7 +126,7 @@ public class ControllerLogin {
         try{
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
-            dao.inserir(investidor);
+            dao.inserirInvestidor(investidor);
             JOptionPane.showMessageDialog(cadastroFrame, "Investidor cadastrado"
                     ,"Aviso", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){
@@ -139,6 +142,7 @@ public class ControllerLogin {
         } 
     }
     
+    //Construtor para a Lógica do saldo.
     public void menuParaConsul(){
         menuFrame.setVisible(false);
         consulSaldoFrame.setVisible(true);
@@ -173,7 +177,7 @@ public class ControllerLogin {
 
         try(Connection conn = new Conexao().getConnection()) {
             InvestidorDAO dao = new InvestidorDAO(conn);
-            ResultSet res = dao.consultar(investidor);
+            ResultSet res = dao.consultarInvestidor(investidor);
 
             if (res.next()) {
                 double saldoReais = res.getDouble("real");
@@ -201,6 +205,19 @@ public class ControllerLogin {
                     JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+    //Construtor para a lógica de depositar.
+    public void menuParaDepositar(){
+        menuFrame.setVisible(false);
+        depositarFrame.setVisible(true);
+    }
+    
+    public void depositarParaMenu(){
+        depositarFrame.setVisible(false);
+        menuFrame.setVisible(true);
+    }
+    
+    
 
 
     
