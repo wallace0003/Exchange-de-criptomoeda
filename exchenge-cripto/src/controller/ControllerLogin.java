@@ -215,7 +215,7 @@ public class ControllerLogin {
         }
     }
     
-    //Construtor para a lógica de depositar.
+    //Controller para a lógica de depositar.
     public void menuParaDepositar(){
         menuFrame.setVisible(false);
         depositarFrame.getjLValorAtualRef().setText
@@ -310,6 +310,91 @@ public class ControllerLogin {
             JOptionPane.showMessageDialog(depositarFrame, 
                 "Erro ao realizar depósito: " + e.getMessage(), "Erro", 
                 JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    
+    //Controller para a lógica do  extrato
+    
+    public void menuParaExtrato(){
+        menuFrame.setVisible(false);
+        consulExtratoFrame.setVisible(true);
+        consulExtratoFrame.getTextAreaExtrato().setText("");
+        consulExtratoFrame.getTextSenha().setText("");
+    }
+    
+    public void extratoParaMenu(){
+        consulExtratoFrame.setVisible(false);
+        menuFrame.setVisible(true);
+        consulExtratoFrame.getTextAreaExtrato().setText("");
+        consulExtratoFrame.getTextSenha().setText("");
+    }
+    
+    public void consulExtrato() {
+        String senhaFornecida = consulExtratoFrame.getTextSenha().getText();
+
+        // Verifica se a senha foi fornecida
+        if (senhaFornecida.isEmpty()) {
+            JOptionPane.showMessageDialog(consulExtratoFrame,
+                    "Por favor, insira a senha para consultar o Extrato.",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        Investidor investidor = new Investidor(senhaFornecida, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Verifica se a senha está correta
+            ResultSet res = dao.consultarInvestidor(investidor);
+            if (res.next()) {
+                // Limpa o textAreaExtrato antes de exibir novos dados
+                consulExtratoFrame.getTextAreaExtrato().setText("");
+
+                // Consulta o extrato pelo CPF
+                ResultSet extratoRes = dao.consultarExtratoPorCpf(investidor);
+
+                // Monta e exibe o extrato no textAreaExtrato
+                StringBuilder extrato = new StringBuilder();
+                extrato.append("Segue seu extrato abaixo:\n\n");
+
+                while (extratoRes.next()) {
+                    extrato.append("Data: ").append
+                    (extratoRes.getString("data")).append("\n");
+                    extrato.append("Hora: ").append
+                    (extratoRes.getString("hora")).append("\n");
+                    extrato.append("Operação: ")
+                    .append(extratoRes.getString("sinal")).append(" ")
+                    .append(extratoRes.getString("valor")).append(" ")
+                    .append(extratoRes.getString("tipomoeda")).append("\n");
+                    extrato.append("CT: ").append
+                    (extratoRes.getDouble("ct")).append("\n");
+                    extrato.append("Taxa: ").append
+                    (extratoRes.getDouble("taxa")).append("\n");
+                    extrato.append("Saldo Real: ").append
+                    (extratoRes.getDouble("real")).append("\n");
+                    extrato.append("Saldo Bitcoin: ")
+                    .append(extratoRes.getDouble("bitcoin")).append("\n");
+                    extrato.append("Saldo Ethereum: ")
+                    .append(extratoRes.getDouble("ethereum")).append("\n");
+                    extrato.append("Saldo Ripple: ")
+                    .append(extratoRes.getDouble("ripple")).append("\n");
+                    extrato.append("--------------------------------------\n");
+                }
+                consulExtratoFrame.getTextAreaExtrato()
+                                   .setText(extrato.toString());
+
+            } else {
+                JOptionPane.showMessageDialog(consulExtratoFrame,
+                        "Senha incorreta! Tente novamente.", "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(consulExtratoFrame,
+                    "Erro ao consultar Extrato: " + e.getMessage(), "Erro",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
     
