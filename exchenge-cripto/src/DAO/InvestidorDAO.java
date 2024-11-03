@@ -14,6 +14,8 @@ public class InvestidorDAO {
         this.conn = conn;
     }
     
+    //lógica da tabela investidor abaixo.
+    
     public void inserirInvestidor (Investidor investidor) throws SQLException {
     String sql = "INSERT INTO investidores.investidor (nome, cpf, senha, real, "
                 + "bitcoin, ethereum, ripple) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -30,7 +32,8 @@ public class InvestidorDAO {
         }
     }
     
-    public ResultSet consultarInvestidor (Investidor investidor)throws SQLException{
+    public ResultSet consultarInvestidor (Investidor investidor)
+        throws SQLException{
         String sql = "select * from investidores.investidor"
                      + " where cpf = ? AND senha = ?";
         
@@ -63,6 +66,8 @@ public class InvestidorDAO {
         statement.execute();
         conn.close();
     }
+    
+    //Lógica da tabela extrato abaixo.
 
     
     public void inserirExtrato (Extrato extrato) throws SQLException{
@@ -86,5 +91,16 @@ public class InvestidorDAO {
         stmt.setString(13, extrato.getMaisOuMenos());
         stmt.executeUpdate();
         }
-    } 
+    }
+    
+    public ResultSet consultarExtratoPorCpf(Investidor investidor) 
+            throws SQLException {
+        String sql = "select * from investidores.extrato where cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, investidor.getCpf());
+        statement.execute();
+        return statement.getResultSet();
+    }
+    
+    
 }

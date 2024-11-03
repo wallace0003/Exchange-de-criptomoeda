@@ -56,7 +56,7 @@ public class ControllerLogin {
     }
     
     
-    //Construtor para a lógica do login do usuário
+    //Constroller para a lógica do login do usuário
     public void realizarLogin(){
     Investidor investidor = new 
         Investidor(loginFrame.getTextSenha().getText(), null, null,
@@ -103,7 +103,7 @@ public class ControllerLogin {
     }
     
     
-    //Construtor para a lógica do cadastro.
+    //Controller para a lógica do cadastro.
     public void irCadastrar(){
         loginFrame.setVisible(false);
         cadastroFrame.setVisible(true);
@@ -151,7 +151,7 @@ public class ControllerLogin {
         } 
     }
     
-    //Construtor para a Lógica do saldo.
+    //Controller para a Lógica do saldo.
     public void menuParaConsul(){
         menuFrame.setVisible(false);
         consulSaldoFrame.setVisible(true);
