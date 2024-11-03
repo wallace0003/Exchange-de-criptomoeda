@@ -30,7 +30,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLCpf" pref="101" max="32767" attributes="0"/>
+                          <Component id="jLCpf" pref="126" max="32767" attributes="0"/>
                           <Component id="jLNome" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -176,6 +176,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sacar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buSacarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buComprarCri">
       <Properties>
@@ -261,7 +264,7 @@
     <Component class="javax.swing.JLabel" name="jLCpf">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="URW Bookman" size="12" style="3"/>
+          <Font name="URW Bookman" size="14" style="3"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -275,7 +278,7 @@
     <Component class="javax.swing.JLabel" name="jLNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="URW Bookman" size="12" style="3"/>
+          <Font name="URW Bookman" size="14" style="3"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">

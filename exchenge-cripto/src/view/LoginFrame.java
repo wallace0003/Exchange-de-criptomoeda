@@ -77,8 +77,6 @@ public class LoginFrame extends javax.swing.JFrame {
         textCpf = new javax.swing.JTextField();
         textSenha = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         buCadastro.setBackground(new java.awt.Color(255, 255, 255));
         buCadastro.setFont(new java.awt.Font("URW Bookman", 1, 24)); // NOI18N
         buCadastro.setForeground(new java.awt.Color(255, 0, 0));
@@ -156,6 +154,7 @@ public class LoginFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buCadastroActionPerformed

@@ -169,6 +169,11 @@ public class MenuFrame extends javax.swing.JFrame {
         buSacar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buSacar.setForeground(new java.awt.Color(255, 0, 0));
         buSacar.setText("Sacar");
+        buSacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buSacarActionPerformed(evt);
+            }
+        });
 
         buComprarCri.setBackground(new java.awt.Color(255, 255, 255));
         buComprarCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
@@ -203,10 +208,10 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Nome:");
 
-        jLCpf.setFont(new java.awt.Font("URW Bookman", 3, 12)); // NOI18N
+        jLCpf.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         jLCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
-        jLNome.setFont(new java.awt.Font("URW Bookman", 3, 12)); // NOI18N
+        jLNome.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         jLNome.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,7 +227,7 @@ public class MenuFrame extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(jLCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                             .addComponent(jLNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -301,6 +306,10 @@ public class MenuFrame extends javax.swing.JFrame {
     private void buConsultarExtratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buConsultarExtratoActionPerformed
         cLogin.menuParaExtrato();
     }//GEN-LAST:event_buConsultarExtratoActionPerformed
+
+    private void buSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buSacarActionPerformed
+        cLogin.menuParaSacar();
+    }//GEN-LAST:event_buSacarActionPerformed
     
     
     private ControllerLogin cLogin;

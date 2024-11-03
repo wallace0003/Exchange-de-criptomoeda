@@ -402,4 +402,102 @@ public class ControllerLogin {
         }
     }
     
+    
+    //Controller para lógica do sacar
+    public void menuParaSacar(){
+        menuFrame.setVisible(false);
+        sacarFrame.setVisible(true);
+    }
+    
+    public void sacarParaMenu(){
+        sacarFrame.setVisible(false);
+        menuFrame.setVisible(true);
+    }
+    
+    public void sacar() {
+    // Obtém o valor do saque do campo de texto
+    String valorSaqueStr = sacarFrame.getTextValorSaque().getText();
+
+    // Verifica se o valor inserido é válido
+    if (valorSaqueStr.isEmpty()) {
+        JOptionPane.showMessageDialog(sacarFrame, 
+                "Por favor, insira um valor para saque.", 
+                "Erro", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // Converte o valor de saque para um número
+    double valorSaque;
+    try {
+        valorSaque = Double.parseDouble(valorSaqueStr);
+        if (valorSaque <= 0) {
+            JOptionPane.showMessageDialog(sacarFrame, 
+                "O valor de saque deve ser positivo.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(sacarFrame, 
+            "Por favor, insira um valor numérico válido.", "Erro", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Obtém o CPF do usuário logado
+    String cpf = menuFrame.getjLCpf().getText();
+    String nome = menuFrame.getjLNome().getText();
+    Investidor investidor = new Investidor(null, null, nome, cpf);
+
+    try (Connection conn = new Conexao().getConnection()) {
+        InvestidorDAO dao = new InvestidorDAO(conn);
+
+        // Obtém o saldo atual do investidor
+        ResultSet res = dao.consultarInvestidorPorCpf(investidor);
+        if (res.next()) {
+            double saldoAtual = res.getDouble("real");
+            double saldoBitcoin = res.getDouble("bitcoin");
+            double saldoEthereum = res.getDouble("ethereum");
+            double saldoRipple = res.getDouble("ripple");
+
+            // Verifica se o saldo é suficiente para o saque
+            if (saldoAtual < valorSaque) {
+                JOptionPane.showMessageDialog(sacarFrame, 
+                        "Saldo insuficiente para realizar o saque.", 
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calcula o novo saldo
+            double novoSaldo = saldoAtual - valorSaque;
+
+            // Jogando Extrato para o banco de dados
+            String data = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String hora = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"));
+            Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                    valorSaque, "real", novoSaldo, saldoRipple, 
+                    saldoEthereum, saldoBitcoin, 0.0, 0.0, "-");
+            dao.inserirExtrato(extrato);
+
+            // Atualiza o saldo do investidor no banco de dados
+            dao.atualizarSaldoReais(investidor, novoSaldo);
+
+            // Atualiza o label de saldo com o novo valor
+            sacarFrame.getjLValorAtualRef().setText("Valor Atual:");
+            sacarFrame.getjLValorAtual().setText(String.format("%.2f", novoSaldo));
+
+            JOptionPane.showMessageDialog(sacarFrame, 
+                    "Saque realizado com sucesso!", 
+                    "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(sacarFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(sacarFrame, 
+                "Erro ao realizar saque: " + e.getMessage(), 
+                "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
 }
