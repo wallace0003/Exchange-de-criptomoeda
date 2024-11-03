@@ -81,7 +81,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         buCadastro.setBackground(new java.awt.Color(255, 255, 255));
         buCadastro.setFont(new java.awt.Font("URW Bookman", 1, 24)); // NOI18N
-        buCadastro.setForeground(new java.awt.Color(153, 0, 0));
+        buCadastro.setForeground(new java.awt.Color(255, 0, 0));
         buCadastro.setText("Cadastrar");
         buCadastro.setBorder(new javax.swing.border.MatteBorder(null));
         buCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         buEntrar.setBackground(new java.awt.Color(255, 255, 255));
         buEntrar.setFont(new java.awt.Font("URW Bookman", 1, 24)); // NOI18N
-        buEntrar.setForeground(new java.awt.Color(153, 0, 0));
+        buEntrar.setForeground(new java.awt.Color(255, 0, 0));
         buEntrar.setText("Entrar");
         buEntrar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -152,8 +152,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                    .addComponent(buCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();

@@ -315,7 +315,6 @@ public class ControllerLogin {
     
     
     //Controller para a lógica do  extrato
-    
     public void menuParaExtrato(){
         menuFrame.setVisible(false);
         consulExtratoFrame.setVisible(true);
@@ -352,6 +351,9 @@ public class ControllerLogin {
             if (res.next()) {
                 // Limpa o textAreaExtrato antes de exibir novos dados
                 consulExtratoFrame.getTextAreaExtrato().setText("");
+                //não deixando o usuário editar o textArea
+                consulExtratoFrame.getTextAreaExtrato().setEditable(false);
+                
 
                 // Consulta o extrato pelo CPF
                 ResultSet extratoRes = dao.consultarExtratoPorCpf(investidor);
@@ -385,6 +387,8 @@ public class ControllerLogin {
                 }
                 consulExtratoFrame.getTextAreaExtrato()
                                    .setText(extrato.toString());
+                //Limpando a senha
+                consulExtratoFrame.getTextSenha().setText("");
 
             } else {
                 JOptionPane.showMessageDialog(consulExtratoFrame,
