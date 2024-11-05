@@ -280,6 +280,11 @@ public class MenuFrame extends javax.swing.JFrame {
         buComprarCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buComprarCri.setForeground(new java.awt.Color(255, 0, 0));
         buComprarCri.setText("Comprar Criptomoedas");
+        buComprarCri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buComprarCriActionPerformed(evt);
+            }
+        });
 
         buVenderCri.setBackground(new java.awt.Color(255, 255, 255));
         buVenderCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
@@ -493,6 +498,10 @@ public class MenuFrame extends javax.swing.JFrame {
     private void buSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buSacarActionPerformed
         cLogin.menuParaSacar();
     }//GEN-LAST:event_buSacarActionPerformed
+
+    private void buComprarCriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buComprarCriActionPerformed
+        cLogin.menuParaCompraCrip();
+    }//GEN-LAST:event_buComprarCriActionPerformed
     
     
     private ControllerLogin cLogin;

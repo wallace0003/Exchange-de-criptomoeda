@@ -32,7 +32,7 @@ public class ControllerLogin {
     private MenuFrame menuFrame;
     private ConsulSaldoFrame consulSaldoFrame;
     private CadastroFrame cadastroFrame;
-    private ComprarCripFrame compraCripFrame;
+    private ComprarCripFrame comprarCripFrame;
     private ConsulExtratoFrame consulExtratoFrame;
     private DepositarFrame depositarFrame;
     private SacarFrame sacarFrame;
@@ -46,7 +46,7 @@ public class ControllerLogin {
         menuFrame = new MenuFrame(this);
         consulSaldoFrame = new ConsulSaldoFrame(this);
         cadastroFrame = new CadastroFrame(this);
-        compraCripFrame = new ComprarCripFrame(this);
+        comprarCripFrame = new ComprarCripFrame(this);
         consulExtratoFrame = new ConsulExtratoFrame(this);
         depositarFrame = new DepositarFrame(this);
         sacarFrame = new SacarFrame(this);
@@ -534,5 +534,81 @@ public class ControllerLogin {
                     "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+    //Controller para a lógica de comprar Cripto.
+    public void menuParaCompraCrip() {
+        // Solicita a senha do usuário
+        String senhaFornecida = JOptionPane.showInputDialog(comprarCripFrame, 
+            "Digite sua senha para continuar:", "Verificação de Senha", 
+            JOptionPane.PLAIN_MESSAGE);
+
+        // Verifica se a senha foi fornecida
+        if (senhaFornecida == null || senhaFornecida.isEmpty()) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "A senha não foi fornecida. Tente novamente.", "Aviso", 
+                JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Obtém o CPF do usuário logado
+        String cpf = menuFrame.getjLCpf().getText();
+        Investidor investidor = new Investidor(senhaFornecida, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Consulta o investidor no banco de dados com CPF e senha fornecidos
+            ResultSet res = dao.consultarInvestidor(investidor);
+
+            // Verifica se o investidor foi encontrado e a senha está correta
+            if (res.next()) {
+                // Realiza a consulta para obter os valores de cotação
+                ResultSet resPreco = dao.consultarPreco();
+
+                if (resPreco.next()) {
+                    // Obtém os valores de cotação de Bitcoin, Ethereum e Ripple
+                    double valorBitcoin = resPreco.getDouble("bitcoin");
+                    double valorEthereum = resPreco.getDouble("ethereum");
+                    double valorRipple = resPreco.getDouble("ripple");
+
+                    // Formata os valores para exibição
+                    String valorBitcoinStr = String.
+                    format("%.2f", valorBitcoin);
+                    String valorEthereumStr = String.
+                    format("%.2f", valorEthereum);
+                    String valorRippleStr = String.format("%.2f", valorRipple);
+
+                    // Atualiza as labels na interface com as cotações
+                    comprarCripFrame.getjLBitcoin().setText(valorBitcoinStr);
+                    comprarCripFrame.getjLEthereum().setText(valorEthereumStr);
+                    comprarCripFrame.getjLRipple().setText(valorRippleStr);
+
+                    // Oculta o menu e exibe a tela de compra
+                    menuFrame.setVisible(false);
+                    comprarCripFrame.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter as cotações. Tente novamente.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                // Exibe mensagem de erro se a senha estiver incorreta
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Senha incorreta! Tente novamente.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao verificar senha: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    
+    public void comprarCripParaMenu() {
+        comprarCripFrame.setVisible(false);
+        menuFrame.setVisible(true);
+    }
+    
 
 }
