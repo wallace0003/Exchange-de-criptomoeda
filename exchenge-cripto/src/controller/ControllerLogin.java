@@ -71,6 +71,38 @@ public class ControllerLogin {
                 // Captura o nome e o CPF do usuário logado
                 String nome = res.getString("nome");
                 String cpf = res.getString("cpf");
+                ResultSet resPreco = dao.consultarPreco();
+                    //Verificando se deu certo a consulta a tabela precos.
+                    if (resPreco.next()) { 
+                        double valorBitcoin = resPreco.getDouble("bitcoin");
+                        double valorEthereum = resPreco.getDouble("ethereum");
+                        double valorRipple = resPreco.getDouble("ripple");
+
+                        
+                        String valorBitcoinStr = String.format
+                        ("%.2f", valorBitcoin);
+                        String valorEthereumStr = String.format
+                        ("%.2f", valorEthereum);
+                        String valorRippleStr = String.format
+                        ("%.2f", valorRipple);
+
+                        // Fechar a janela de login e abrir a janela do menu
+                        loginFrame.setVisible(false);
+                        // Passa os dados para a próxima janela
+                        menuFrame.setjLNome(nome);
+                        menuFrame.setjLCpf(cpf);
+                        menuFrame.getjLBitcoin().setText(valorBitcoinStr);
+                        menuFrame.getjLEthereum().setText(valorEthereumStr);
+                        menuFrame.getjLRipple().setText(valorRippleStr);
+                        menuFrame.setVisible(true);
+                        // Limpa os campos de login
+                        loginFrame.getTextSenha().setText("");
+                        loginFrame.getTextCpf().setText("");
+                    } else {
+                        JOptionPane.showMessageDialog(loginFrame, 
+                            "Erro ao obter os preços das criptomoedas.", 
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
 
 
                 // Fechar a janela de login e abrir a janela do menu
