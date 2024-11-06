@@ -32,7 +32,7 @@ public class ControllerLogin {
     private MenuFrame menuFrame;
     private ConsulSaldoFrame consulSaldoFrame;
     private CadastroFrame cadastroFrame;
-    private ComprarCripFrame compraCripFrame;
+    private ComprarCripFrame comprarCripFrame;
     private ConsulExtratoFrame consulExtratoFrame;
     private DepositarFrame depositarFrame;
     private SacarFrame sacarFrame;
@@ -46,7 +46,7 @@ public class ControllerLogin {
         menuFrame = new MenuFrame(this);
         consulSaldoFrame = new ConsulSaldoFrame(this);
         cadastroFrame = new CadastroFrame(this);
-        compraCripFrame = new ComprarCripFrame(this);
+        comprarCripFrame = new ComprarCripFrame(this);
         consulExtratoFrame = new ConsulExtratoFrame(this);
         depositarFrame = new DepositarFrame(this);
         sacarFrame = new SacarFrame(this);
@@ -71,6 +71,38 @@ public class ControllerLogin {
                 // Captura o nome e o CPF do usuário logado
                 String nome = res.getString("nome");
                 String cpf = res.getString("cpf");
+                ResultSet resPreco = dao.consultarPreco();
+                    //Verificando se deu certo a consulta a tabela precos.
+                    if (resPreco.next()) { 
+                        double valorBitcoin = resPreco.getDouble("bitcoin");
+                        double valorEthereum = resPreco.getDouble("ethereum");
+                        double valorRipple = resPreco.getDouble("ripple");
+
+                        
+                        String valorBitcoinStr = String.format
+                        ("%.2f", valorBitcoin);
+                        String valorEthereumStr = String.format
+                        ("%.2f", valorEthereum);
+                        String valorRippleStr = String.format
+                        ("%.2f", valorRipple);
+
+                        // Fechar a janela de login e abrir a janela do menu
+                        loginFrame.setVisible(false);
+                        // Passa os dados para a próxima janela
+                        menuFrame.setjLNome(nome);
+                        menuFrame.setjLCpf(cpf);
+                        menuFrame.getjLBitcoin().setText(valorBitcoinStr);
+                        menuFrame.getjLEthereum().setText(valorEthereumStr);
+                        menuFrame.getjLRipple().setText(valorRippleStr);
+                        menuFrame.setVisible(true);
+                        // Limpa os campos de login
+                        loginFrame.getTextSenha().setText("");
+                        loginFrame.getTextCpf().setText("");
+                    } else {
+                        JOptionPane.showMessageDialog(loginFrame, 
+                            "Erro ao obter os preços das criptomoedas.", 
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
 
 
                 // Fechar a janela de login e abrir a janela do menu
@@ -402,4 +434,477 @@ public class ControllerLogin {
         }
     }
     
+    
+    //Controller para lógica do sacar
+    public void menuParaSacar(){
+        menuFrame.setVisible(false);
+        sacarFrame.setVisible(true);
+    }
+    
+    public void sacarParaMenu(){
+        sacarFrame.setVisible(false);
+        menuFrame.setVisible(true);
+    }
+    
+    public void sacar() {
+        // Obtém o valor do saque do campo de texto
+        String valorSaqueStr = sacarFrame.getTextValorSaque().getText();
+
+        // Verifica se o valor inserido é válido
+        if (valorSaqueStr.isEmpty()) {
+            JOptionPane.showMessageDialog(sacarFrame, 
+                    "Por favor, insira um valor para saque.", 
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Converte o valor de saque para um número
+        double valorSaque;
+        try {
+            valorSaque = Double.parseDouble(valorSaqueStr);
+            if (valorSaque <= 0) {
+                JOptionPane.showMessageDialog(sacarFrame, 
+                    "O valor de saque deve ser positivo.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(sacarFrame, 
+                "Por favor, insira um valor numérico válido.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Obtém o CPF do usuário logado
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, nome, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Obtém o saldo atual do investidor
+            ResultSet res = dao.consultarInvestidorPorCpf(investidor);
+            if (res.next()) {
+                double saldoAtual = res.getDouble("real");
+                double saldoBitcoin = res.getDouble("bitcoin");
+                double saldoEthereum = res.getDouble("ethereum");
+                double saldoRipple = res.getDouble("ripple");
+
+                // Verifica se o saldo é suficiente para o saque
+                if (saldoAtual < valorSaque) {
+                    JOptionPane.showMessageDialog(sacarFrame, 
+                            "Saldo insuficiente para realizar o saque.", 
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                // Calcula o novo saldo
+                double novoSaldo = saldoAtual - valorSaque;
+
+                // Jogando Extrato para o banco de dados
+                String data = LocalDate.now().
+                format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                String hora = LocalTime.now().
+                format(DateTimeFormatter.ofPattern("HH:mm"));
+                Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                        valorSaque, "real", novoSaldo, saldoRipple, 
+                        saldoEthereum, saldoBitcoin, 0.0, 0.0, "-");
+                dao.inserirExtrato(extrato);
+
+                // Atualiza o saldo do investidor no banco de dados
+                dao.atualizarSaldoReais(investidor, novoSaldo);
+
+                // Atualiza o label de saldo com o novo valor
+                sacarFrame.getjLValorAtualRef().setText("Saldo Atual:");
+                sacarFrame.getjLValorAtual().setText
+                (String.format("%.2f", novoSaldo));
+
+                JOptionPane.showMessageDialog(sacarFrame, 
+                        "Saque realizado com sucesso!", 
+                        "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(sacarFrame, 
+                        "Erro ao localizar investidor.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(sacarFrame, 
+                    "Erro ao realizar saque: " + e.getMessage(), 
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    //Controller para a lógica de comprar Cripto.
+    public void menuParaCompraCrip() {
+        // Solicita a senha do usuário
+        String senhaFornecida = JOptionPane.showInputDialog(comprarCripFrame, 
+            "Digite sua senha para continuar:", "Verificação de Senha", 
+            JOptionPane.PLAIN_MESSAGE);
+
+        // Verifica se a senha foi fornecida
+        if (senhaFornecida == null || senhaFornecida.isEmpty()) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "A senha não foi fornecida. Tente novamente.", "Aviso", 
+                JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Obtém o CPF do usuário logado
+        String cpf = menuFrame.getjLCpf().getText();
+        Investidor investidor = new Investidor(senhaFornecida, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Consulta o investidor no banco de dados com CPF e senha fornecidos
+            ResultSet res = dao.consultarInvestidor(investidor);
+
+            // Verifica se o investidor foi encontrado e a senha está correta
+            if (res.next()) {
+                // Realiza a consulta para obter os valores de cotação
+                ResultSet resPreco = dao.consultarPreco();
+
+                if (resPreco.next()) {
+                    // Obtém os valores de cotação de Bitcoin, Ethereum e Ripple
+                    double valorBitcoin = resPreco.getDouble("bitcoin");
+                    double valorEthereum = resPreco.getDouble("ethereum");
+                    double valorRipple = resPreco.getDouble("ripple");
+
+                    // Formata os valores para exibição
+                    String valorBitcoinStr = String.
+                    format("%.2f", valorBitcoin);
+                    String valorEthereumStr = String.
+                    format("%.2f", valorEthereum);
+                    String valorRippleStr = String.format("%.2f", valorRipple);
+
+                    // Atualiza as labels na interface com as cotações
+                    comprarCripFrame.getjLBitcoin().setText(valorBitcoinStr);
+                    comprarCripFrame.getjLEthereum().setText(valorEthereumStr);
+                    comprarCripFrame.getjLRipple().setText(valorRippleStr);
+
+                    // Oculta o menu e exibe a tela de compra
+                    menuFrame.setVisible(false);
+                    comprarCripFrame.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter as cotações. Tente novamente.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                // Exibe mensagem de erro se a senha estiver incorreta
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Senha incorreta! Tente novamente.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao verificar senha: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    
+    public void comprarCripParaMenu() {
+        comprarCripFrame.setVisible(false);
+        menuFrame.setVisible(true);
+    }
+    
+    //Comprar bitcoin
+    public void comprarBitcoin() {
+        // Obtém o valor desejado para compra de Bitcoin do campo de texto
+        String valorBitcoinStr = comprarCripFrame.getTextValorBitcoin()
+                                 .getText();
+
+        // Verifica se o campo está vazio ou se o valor inserido não é numérico
+        if (valorBitcoinStr == null || valorBitcoinStr.isEmpty()) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor para a compra.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double valorCompra;
+        try {
+            valorCompra = Double.parseDouble(valorBitcoinStr);
+            if (valorCompra <= 0) {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "O valor de compra deve ser positivo.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor numérico válido.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Obtém o CPF do usuário logado
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Consulta o saldo atual do investidor
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                // Consulta o preço atual do Bitcoin
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoBitcoin = resPreco.getDouble("bitcoin");
+                    double tx = 0.02 * valorCompra;
+
+                    // Calcula o total de bitcoin arrecadado
+                    double totalBitcoin = valorCompra / precoBitcoin;
+
+                    // Verifica se o investidor tem saldo suficiente para a compra
+                    if (saldoAtual < valorCompra + tx) {
+                        JOptionPane.showMessageDialog(comprarCripFrame, 
+                            "Saldo insuficiente para realizar a compra. "
+                            + "Seu saldo: " + saldoAtual + "\n"
+                            + "Total necessário: " + (valorCompra + tx), 
+                            "Erro", 
+                            JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+                    // Atualiza o saldo do investidor e a quantidade de Bitcoin
+                    double novoSaldoReal = saldoAtual - (valorCompra + tx);
+                    double novoSaldoBitcoin = saldoBitcoin + totalBitcoin;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoBitcoin(investidor, novoSaldoBitcoin);
+
+                    // Registro de transação no extrato
+                    String data = LocalDate.now().format(DateTimeFormatter
+                                  .ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().format(DateTimeFormatter
+                                  .ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                    valorCompra, "BTC", novoSaldoReal, saldoRipple,
+                    saldoEthereum, novoSaldoBitcoin, 0.02,precoBitcoin, "+");
+                    dao.inserirExtrato(extrato);
+
+                    // Mensagem de sucesso
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Compra realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter o preço do Bitcoin.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao realizar a compra: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    //comprar ethereum
+    public void comprarEthereum() {
+        String valorEthereumStr = comprarCripFrame.getTextValorEthereum()
+                                 .getText();
+
+        // Verifica se o campo está vazio ou se o valor inserido não é numérico
+        if (valorEthereumStr == null || valorEthereumStr.isEmpty()) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor para a compra.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double valorCompra;
+        try {
+            valorCompra = Double.parseDouble(valorEthereumStr);
+            if (valorCompra <= 0) {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "O valor de compra deve ser positivo.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor numérico válido.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Obtém o CPF do usuário logado
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            // Consulta o saldo atual do investidor
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoEthereum = resPreco.getDouble("ethereum");
+                    double tx = 0.01 * valorCompra;
+
+                    
+                    double totalEthereum = valorCompra / precoEthereum;
+
+                    if (saldoAtual < valorCompra + tx) {
+                        JOptionPane.showMessageDialog(comprarCripFrame, 
+                            "Saldo insuficiente para realizar a compra. "
+                            + "Seu saldo: " + saldoAtual + "\n"
+                            + "Total necessário: " + (valorCompra + tx), 
+                            "Erro", 
+                            JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+                    // Atualiza o saldo do investidor e a quantidade de Bitcoin
+                    double novoSaldoReal = saldoAtual - (valorCompra + tx);
+                    double novoSaldoEthereum = saldoEthereum + totalEthereum;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoEthereum(investidor, novoSaldoEthereum);
+
+                    // Registro de transação no extrato
+                    String data = LocalDate.now().format(DateTimeFormatter
+                                  .ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().format(DateTimeFormatter
+                                  .ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                    valorCompra, "ETH", novoSaldoReal, saldoRipple,
+                    novoSaldoEthereum, saldoBitcoin, 0.01, precoEthereum, "+");
+                    dao.inserirExtrato(extrato);
+
+                    // Mensagem de sucesso
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Compra realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter o preço do Ethereum", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao realizar a compra: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    //comprar ripple
+    public void comprarRipple() {
+        String valorRippleStr = comprarCripFrame.getTextValorRipple().getText();
+
+        if (valorRippleStr == null || valorRippleStr.isEmpty()) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor para a compra.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double valorCompra;
+        try {
+            valorCompra = Double.parseDouble(valorRippleStr);
+            if (valorCompra <= 0) {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "O valor de compra deve ser positivo.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Por favor, insira um valor numérico válido.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoRipple = resPreco.getDouble("ripple");
+                    double tx = 0.01 * valorCompra;
+                    double totalRipple = valorCompra / precoRipple;
+
+                    if (saldoAtual < valorCompra + tx) {
+                        JOptionPane.showMessageDialog(comprarCripFrame, 
+                            "Saldo insuficiente para realizar a compra. "
+                            + "Seu saldo: " + saldoAtual + "\n"
+                            + "Total necessário: " + (valorCompra + tx), 
+                            "Erro", 
+                            JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+                    double novoSaldoReal = saldoAtual - (valorCompra + tx);
+                    double novoSaldoRipple = saldoRipple + totalRipple;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoRipple(investidor, novoSaldoRipple);
+
+                    String data = LocalDate.now().
+                    format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().
+                    format(DateTimeFormatter.ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(
+                        nome, cpf, data, hora, valorCompra, 
+                        "Ripple", novoSaldoReal, novoSaldoRipple,
+                        saldoEthereum, saldoBitcoin, 0.01, precoRipple, "+"
+                    );
+                    dao.inserirExtrato(extrato);
+
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Compra realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter o preço do Ripple.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao realizar a compra: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+
 }
