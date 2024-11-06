@@ -417,11 +417,11 @@ public class ComprarCripFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buComprarEthereumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buComprarEthereumActionPerformed
-        // TODO add your handling code here:
+        cLogin.comprarEthereum();
     }//GEN-LAST:event_buComprarEthereumActionPerformed
 
     private void buComprarRippleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buComprarRippleActionPerformed
-        // TODO add your handling code here:
+        cLogin.comprarRipple();
     }//GEN-LAST:event_buComprarRippleActionPerformed
 
     private void buComprarBitcoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buComprarBitcoinActionPerformed
