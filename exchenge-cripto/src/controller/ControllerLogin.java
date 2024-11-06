@@ -610,6 +610,7 @@ public class ControllerLogin {
         menuFrame.setVisible(true);
     }
     
+    //Comprar bitcoin
     public void comprarBitcoin() {
         // Obtém o valor desejado para compra de Bitcoin do campo de texto
         String valorBitcoinStr = comprarCripFrame.getTextValorBitcoin()
@@ -712,6 +713,7 @@ public class ControllerLogin {
         }
     }
     
+    //comprar ethereum
     public void comprarEthereum() {
         String valorEthereumStr = comprarCripFrame.getTextValorEthereum()
                                  .getText();
@@ -811,6 +813,7 @@ public class ControllerLogin {
         }
     }
     
+    //comprar ripple
     public void comprarRipple() {
         String valorRippleStr = comprarCripFrame.getTextValorRipple().getText();
 
@@ -902,7 +905,6 @@ public class ControllerLogin {
                 JOptionPane.ERROR_MESSAGE);
         }
     }
-
     
 
 }
