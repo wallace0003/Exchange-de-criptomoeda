@@ -86,18 +86,17 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         this.jLabel9 = jLabel9;
     }
 
-    public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+    public void setTextValorBitcoin(JTextField textValorBitcoin) {
+        this.textValorBitcoin = textValorBitcoin;
     }
 
-    public void setjTextField2(JTextField jTextField2) {
-        this.jTextField2 = jTextField2;
+    public void setTextValorEthereum(JTextField textValorEthereum) {
+        this.textValorEthereum = textValorEthereum;
     }
 
-    public void setjTextField3(JTextField jTextField3) {
-        this.jTextField3 = jTextField3;
+    public void setTextValorRipple(JTextField textValorRipple) {
+        this.textValorRipple = textValorRipple;
     }
-    
     
 
     public ControllerLogin getcLogin() {
@@ -172,20 +171,19 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         return jLabel9;
     }
 
-    public JTextField getjTextField1() {
-        return jTextField1;
+    public JTextField getTextValorBitcoin() {
+        return textValorBitcoin;
     }
 
-    public JTextField getjTextField2() {
-        return jTextField2;
+    public JTextField getTextValorEthereum() {
+        return textValorEthereum;
     }
 
-    public JTextField getjTextField3() {
-        return jTextField3;
+    public JTextField getTextValorRipple() {
+        return textValorRipple;
     }
+
     
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -198,9 +196,9 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         buComprarRipple = new javax.swing.JButton();
         buComprarBitcoin = new javax.swing.JButton();
         buMenu = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        textValorRipple = new javax.swing.JTextField();
+        textValorEthereum = new javax.swing.JTextField();
+        textValorBitcoin = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -261,21 +259,21 @@ public class ComprarCripFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textValorRipple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textValorRippleActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textValorEthereum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textValorEthereumActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textValorBitcoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textValorBitcoinActionPerformed(evt);
             }
         });
 
@@ -330,9 +328,9 @@ public class ComprarCripFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(3, 3, 3)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buComprarEthereum)
@@ -346,9 +344,7 @@ public class ComprarCripFrame extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel4))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -399,18 +395,18 @@ public class ComprarCripFrame extends javax.swing.JFrame {
                     .addComponent(buComprarEthereum, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(buComprarRipple)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buComprarBitcoin)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
                 .addComponent(buMenu)
                 .addContainerGap())
@@ -429,20 +425,20 @@ public class ComprarCripFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buComprarRippleActionPerformed
 
     private void buComprarBitcoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buComprarBitcoinActionPerformed
-        // TODO add your handling code here:
+        cLogin.comprarBitcoin();
     }//GEN-LAST:event_buComprarBitcoinActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textValorRippleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorRippleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textValorRippleActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textValorEthereumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorEthereumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textValorEthereumActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textValorBitcoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorBitcoinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textValorBitcoinActionPerformed
 
     private void buMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buMenuActionPerformed
         cLogin.comprarCripParaMenu();
@@ -469,8 +465,8 @@ public class ComprarCripFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField textValorBitcoin;
+    private javax.swing.JTextField textValorEthereum;
+    private javax.swing.JTextField textValorRipple;
     // End of variables declaration//GEN-END:variables
 }

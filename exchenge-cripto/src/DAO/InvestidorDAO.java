@@ -56,14 +56,48 @@ public class InvestidorDAO {
     public void atualizarSaldoReais(Investidor investidor, 
                                     double novoSaldoReais) throws SQLException 
     {
-        String sql = "UPDATE investidores.investidor SET real = ? WHERE cpf = ?";
-        PreparedStatement statement = conn.prepareStatement(sql);
-        // Define o novo valor para o saldo em reais
-        statement.setDouble(1, novoSaldoReais); 
-        // Define o CPF do investidor para a busca
-        statement.setString(2, investidor.getCpf());  
-        statement.execute();
-        conn.close();
+       String sql = "UPDATE investidores.investidor SET real = ? WHERE cpf = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       // Define o novo valor para o saldo em reais
+       statement.setDouble(1, novoSaldoReais); 
+       // Define o CPF do investidor para a busca
+       statement.setString(2, investidor.getCpf());  
+       statement.execute();
+       
+    }
+    
+    public void atualizarSaldoBitcoin(Investidor investidor, 
+                                    double novoSaldoBitcoin) throws SQLException 
+    {
+       String sql = "UPDATE investidores.investidor "
+                    + "SET bitcoin = ? WHERE cpf = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.setDouble(1, novoSaldoBitcoin);
+       statement.setString(2, investidor.getCpf());  
+       statement.execute();
+       
+    }
+    
+    public void atualizarSaldoEthereum(Investidor investidor, 
+                                    double novoSaldoEthereum) throws SQLException 
+    {
+       String sql = "UPDATE investidores.investidor "
+                    + "SET ethereum = ? WHERE cpf = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.setDouble(1, novoSaldoEthereum);
+       statement.setString(2, investidor.getCpf());  
+       statement.execute();
+    }
+    
+    public void atualizarSaldoRipple(Investidor investidor, 
+                                    double novoSaldoRipple) throws SQLException 
+    {
+       String sql = "UPDATE investidores.investidor "
+                    + "SET ripple = ? WHERE cpf = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.setDouble(1, novoSaldoRipple);
+       statement.setString(2, investidor.getCpf());  
+       statement.execute();
     }
     
     //Lógica da tabela extrato abaixo.
