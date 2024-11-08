@@ -14,6 +14,10 @@ public class VendeCripFrame extends javax.swing.JFrame {
         this.cLogin = cLogin;
     }
 
+    public void setcLogin(ControllerLogin cLogin) {
+        this.cLogin = cLogin;
+    }
+
     public void setBuMenu(JButton buMenu) {
         this.buMenu = buMenu;
     }
@@ -30,24 +34,28 @@ public class VendeCripFrame extends javax.swing.JFrame {
         this.buVenderRipple = buVenderRipple;
     }
 
-    public void setjLValorBitcoin(JLabel jLValorBitcoin) {
-        this.jLValorBitcoin = jLValorBitcoin;
+    public void setjLBitcoin(JLabel jLBitcoin) {
+        this.jLBitcoin = jLBitcoin;
     }
 
-    public void setjLValorEtherium(JLabel jLValorEtherium) {
-        this.jLValorEtherium = jLValorEtherium;
+    public void setjLEthereum(JLabel jLEthereum) {
+        this.jLEthereum = jLEthereum;
     }
 
-    public void setjLValorRipple(JLabel jLValorRipple) {
-        this.jLValorRipple = jLValorRipple;
+    public void setjLRipple(JLabel jLRipple) {
+        this.jLRipple = jLRipple;
     }
 
     public void setjLabel1(JLabel jLabel1) {
         this.jLabel1 = jLabel1;
     }
 
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
     }
 
     public void setjLabel3(JLabel jLabel3) {
@@ -58,12 +66,39 @@ public class VendeCripFrame extends javax.swing.JFrame {
         this.jLabel4 = jLabel4;
     }
 
-    public void setTextQuantidade(JTextField textQuantidade) {
-        this.textQuantidade = textQuantidade;
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public void setTextValorBitcoin(JTextField textValorBitcoin) {
+        this.textValorBitcoin = textValorBitcoin;
+    }
+
+    public void setTextValorEthereum(JTextField textValorEthereum) {
+        this.textValorEthereum = textValorEthereum;
+    }
+
+    public void setTextValorRipple(JTextField textValorRipple) {
+        this.textValorRipple = textValorRipple;
     }
     
-    
-    
+
+    public ControllerLogin getcLogin() {
+        return cLogin;
+    }
+
     public JButton getBuMenu() {
         return buMenu;
     }
@@ -80,24 +115,28 @@ public class VendeCripFrame extends javax.swing.JFrame {
         return buVenderRipple;
     }
 
-    public JLabel getjLValorBitcoin() {
-        return jLValorBitcoin;
+    public JLabel getjLBitcoin() {
+        return jLBitcoin;
     }
 
-    public JLabel getjLValorEtherium() {
-        return jLValorEtherium;
+    public JLabel getjLEthereum() {
+        return jLEthereum;
     }
 
-    public JLabel getjLValorRipple() {
-        return jLValorRipple;
+    public JLabel getjLRipple() {
+        return jLRipple;
     }
 
     public JLabel getjLabel1() {
         return jLabel1;
     }
 
-    public JLabel getjLabel2() {
-        return jLabel2;
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
     }
 
     public JLabel getjLabel3() {
@@ -108,36 +147,64 @@ public class VendeCripFrame extends javax.swing.JFrame {
         return jLabel4;
     }
 
-    public JTextField getTextQuantidade() {
-        return textQuantidade;
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public JTextField getTextValorBitcoin() {
+        return textValorBitcoin;
+    }
+
+    public JTextField getTextValorEthereum() {
+        return textValorEthereum;
+    }
+
+    public JTextField getTextValorRipple() {
+        return textValorRipple;
     }
     
-    
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLValorEtherium = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLValorRipple = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLValorBitcoin = new javax.swing.JLabel();
         buVenderEthereum = new javax.swing.JButton();
         buVenderRipple = new javax.swing.JButton();
         buVenderBitcoin = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        textQuantidade = new javax.swing.JTextField();
         buMenu = new javax.swing.JButton();
+        textValorBitcoin = new javax.swing.JTextField();
+        textValorEthereum = new javax.swing.JTextField();
+        textValorRipple = new javax.swing.JTextField();
+        jLEthereum = new javax.swing.JLabel();
+        jLRipple = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLBitcoin = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
+        jLabel1.setText("Ethereum:");
 
-        jLabel1.setText("Ethreum:");
-
-        jLabel2.setText("Ripple:");
-
+        jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
         jLabel3.setText("Bitcoin:");
 
         buVenderEthereum.setBackground(new java.awt.Color(255, 255, 255));
@@ -170,92 +237,193 @@ public class VendeCripFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Quantidade:");
-
         buMenu.setBackground(new java.awt.Color(255, 255, 255));
         buMenu.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
         buMenu.setForeground(new java.awt.Color(255, 0, 0));
         buMenu.setText("Menu");
+        buMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buMenuActionPerformed(evt);
+            }
+        });
+
+        textValorBitcoin.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+        textValorBitcoin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textValorBitcoinActionPerformed(evt);
+            }
+        });
+
+        textValorEthereum.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+
+        textValorRipple.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+        textValorRipple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textValorRippleActionPerformed(evt);
+            }
+        });
+
+        jLEthereum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLEthereum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLRipple.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLRipple.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel9.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel9.setText("R$");
+
+        jLabel10.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel10.setText("R$");
+
+        jLabel7.setBackground(new java.awt.Color(255, 0, 0));
+        jLabel7.setFont(new java.awt.Font("URW Bookman", 1, 18)); // NOI18N
+        jLabel7.setText("Cotação de cada criptomoeda ->");
+
+        jLabel11.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel11.setText("R$");
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("Bitcoin:");
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("Ethereum:");
+
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("Ripple:");
+
+        jLBitcoin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel8.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
+        jLabel8.setText("Ripple:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLValorEtherium, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buVenderEthereum)
-                    .addComponent(buVenderRipple)
-                    .addComponent(buVenderBitcoin))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                    .addComponent(buMenu, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel3))
+                                        .addGap(1, 1, 1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buVenderRipple)
+                                    .addComponent(buVenderBitcoin)
+                                    .addComponent(buVenderEthereum)))
+                            .addComponent(jLabel7))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buMenu))
-                .addGap(211, 211, 211))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLEthereum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLRipple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel11))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLValorEtherium, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buVenderEthereum)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buVenderRipple, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLBitcoin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel7))))
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                                .addComponent(jLRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buVenderEthereum)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buVenderRipple)
+                    .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3)
-                        .addComponent(jLValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buVenderBitcoin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(48, 48, 48)
-                .addComponent(buMenu)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buVenderBitcoin)
+                    .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(71, 71, 71)
+                .addComponent(buMenu))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buVenderEthereumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buVenderEthereumActionPerformed
-        // TODO add your handling code here:
+        cLogin.venderEthereum();
     }//GEN-LAST:event_buVenderEthereumActionPerformed
 
     private void buVenderRippleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buVenderRippleActionPerformed
-        // TODO add your handling code here:
+        cLogin.venderRipple();
     }//GEN-LAST:event_buVenderRippleActionPerformed
 
     private void buVenderBitcoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buVenderBitcoinActionPerformed
-        // TODO add your handling code here:
+        cLogin.venderBitcoin();
     }//GEN-LAST:event_buVenderBitcoinActionPerformed
+
+    private void textValorBitcoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorBitcoinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textValorBitcoinActionPerformed
+
+    private void textValorRippleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorRippleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textValorRippleActionPerformed
+
+    private void buMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buMenuActionPerformed
+        cLogin.venderCripParaMenu();
+    }//GEN-LAST:event_buMenuActionPerformed
 
 
     private ControllerLogin cLogin;
@@ -264,13 +432,21 @@ public class VendeCripFrame extends javax.swing.JFrame {
     private javax.swing.JButton buVenderBitcoin;
     private javax.swing.JButton buVenderEthereum;
     private javax.swing.JButton buVenderRipple;
-    private javax.swing.JLabel jLValorBitcoin;
-    private javax.swing.JLabel jLValorEtherium;
-    private javax.swing.JLabel jLValorRipple;
+    private javax.swing.JLabel jLBitcoin;
+    private javax.swing.JLabel jLEthereum;
+    private javax.swing.JLabel jLRipple;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField textQuantidade;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField textValorBitcoin;
+    private javax.swing.JTextField textValorEthereum;
+    private javax.swing.JTextField textValorRipple;
     // End of variables declaration//GEN-END:variables
 }

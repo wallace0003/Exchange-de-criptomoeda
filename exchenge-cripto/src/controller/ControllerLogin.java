@@ -906,5 +906,348 @@ public class ControllerLogin {
         }
     }
     
+    //Controller para vender Cripto.
+    
+    public void menuParaVenderCripto(){
+        String senhaFornecida = JOptionPane.showInputDialog(vendeCripFrame, 
+            "Digite sua senha para continuar:", "Verificação de Senha", 
+            JOptionPane.PLAIN_MESSAGE);
 
+        // Verifica se a senha foi fornecida
+        if (senhaFornecida == null || senhaFornecida.isEmpty()) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "A senha não foi fornecida. Tente novamente.", "Aviso", 
+                JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        Investidor investidor = new Investidor(senhaFornecida, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet res = dao.consultarInvestidor(investidor);
+
+            
+            if (res.next()) {
+                ResultSet resPreco = dao.consultarPreco();
+
+                if (resPreco.next()) {
+                    double valorBitcoin = resPreco.getDouble("bitcoin");
+                    double valorEthereum = resPreco.getDouble("ethereum");
+                    double valorRipple = resPreco.getDouble("ripple");
+
+                    String valorBitcoinStr = String.
+                    format("%.2f", valorBitcoin);
+                    String valorEthereumStr = String.
+                    format("%.2f", valorEthereum);
+                    String valorRippleStr = String.format("%.2f", valorRipple);
+
+                    
+                    vendeCripFrame.getjLBitcoin().setText(valorBitcoinStr);
+                    vendeCripFrame.getjLEthereum().setText(valorEthereumStr);
+                    vendeCripFrame.getjLRipple().setText(valorRippleStr);
+
+                    
+                    menuFrame.setVisible(false);
+                    vendeCripFrame.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(comprarCripFrame, 
+                        "Erro ao obter as cotações. Tente novamente.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                // Exibe mensagem de erro se a senha estiver incorreta
+                JOptionPane.showMessageDialog(comprarCripFrame, 
+                    "Senha incorreta! Tente novamente.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(comprarCripFrame, 
+                "Erro ao verificar senha: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void venderCripParaMenu(){
+        vendeCripFrame.setVisible(false);
+        menuFrame.setVisible(true);
+        vendeCripFrame.getTextValorBitcoin().setText("");
+        vendeCripFrame.getTextValorEthereum().setText("");
+        vendeCripFrame.getTextValorRipple().setText("");
+    }
+    
+    public void venderBitcoin() {
+        String valorBitcoinStr = vendeCripFrame.getTextValorBitcoin().getText();
+
+        if (valorBitcoinStr == null || valorBitcoinStr.isEmpty()) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade para a venda.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double quantidadeBitcoin;
+        try {
+            quantidadeBitcoin = Double.parseDouble(valorBitcoinStr);
+            if (quantidadeBitcoin <= 0) {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "A quantidade de venda deve ser positiva.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade numérica válida.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                if (saldoBitcoin < quantidadeBitcoin) {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        """
+                        Saldo de Bitcoin insuficiente para realizar a venda.
+                        Saldo atual: """ + saldoEthereum, 
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoBitcoin = resPreco.getDouble("bitcoin");
+                    double valorVenda = quantidadeBitcoin * precoBitcoin;
+                    double tx = 0.03 * valorVenda;
+                    double valorRecebido = valorVenda - tx;
+
+                    double novoSaldoReal = saldoAtual + valorRecebido;
+                    double novoSaldoBitcoin = saldoBitcoin - quantidadeBitcoin;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoBitcoin(investidor, novoSaldoBitcoin);
+
+                    String data = LocalDate.now().format(DateTimeFormatter
+                                  .ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().format(DateTimeFormatter
+                                  .ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                        quantidadeBitcoin, "BTC", novoSaldoReal, saldoRipple,
+                        saldoEthereum, novoSaldoBitcoin, 0.03, precoBitcoin, "-");
+                    dao.inserirExtrato(extrato);
+
+                    // Mensagem de sucesso
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Venda realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Erro ao obter o preço do Bitcoin.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Erro ao realizar a venda: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void venderEthereum() {
+        String valorEthereumStr = vendeCripFrame.getTextValorEthereum().getText();
+
+        if (valorEthereumStr == null || valorEthereumStr.isEmpty()) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade para a venda.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double quantidadeEthereum;
+        try {
+            quantidadeEthereum = Double.parseDouble(valorEthereumStr);
+            if (quantidadeEthereum <= 0) {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "A quantidade de venda deve ser positiva.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade numérica válida.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                if (saldoEthereum < quantidadeEthereum) {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        """
+                        Saldo de Ethereum insuficiente para realizar a venda.
+                        Saldo atual: """ + saldoEthereum, 
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoEthereum = resPreco.getDouble("ethereum");
+                    double valorVenda = quantidadeEthereum * precoEthereum;
+                    double tx = 0.02 * valorVenda;
+                    double valorRecebido = valorVenda - tx;
+
+                    double novoSaldoReal = saldoAtual + valorRecebido;
+                    double novoSaldoEthereum = saldoEthereum - 
+                                               quantidadeEthereum;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoEthereum(investidor, novoSaldoEthereum);
+
+                    String data = LocalDate.now().format(DateTimeFormatter
+                                  .ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().format(DateTimeFormatter
+                                  .ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                        quantidadeEthereum, "ETH", novoSaldoReal, saldoRipple,
+                        novoSaldoEthereum, saldoBitcoin, 0.02, precoEthereum,
+                        "-");
+                    dao.inserirExtrato(extrato);
+
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Venda de Ethereum realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Erro ao obter o preço do Ethereum.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Erro ao realizar a venda: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void venderRipple() {
+        String valorRippleStr = vendeCripFrame.getTextValorRipple().getText();
+
+        if (valorRippleStr == null || valorRippleStr.isEmpty()) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade para a venda.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double quantidadeRipple;
+        try {
+            quantidadeRipple = Double.parseDouble(valorRippleStr);
+            if (quantidadeRipple <= 0) {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "A quantidade de venda deve ser positiva.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Por favor, insira uma quantidade numérica válida.", "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String cpf = menuFrame.getjLCpf().getText();
+        String nome = menuFrame.getjLNome().getText();
+        Investidor investidor = new Investidor(null, null, null, cpf);
+
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet resInvestidor = dao.consultarInvestidorPorCpf(investidor);
+            if (resInvestidor.next()) {
+                double saldoAtual = resInvestidor.getDouble("real");
+                double saldoBitcoin = resInvestidor.getDouble("bitcoin");
+                double saldoEthereum = resInvestidor.getDouble("ethereum");
+                double saldoRipple = resInvestidor.getDouble("ripple");
+
+                if (saldoRipple < quantidadeRipple) {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        """
+                        Saldo de Ripple insuficiente para realizar a venda.
+                        Saldo atual: """ + saldoRipple, 
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                ResultSet resPreco = dao.consultarPreco();
+                if (resPreco.next()) {
+                    double precoRipple = resPreco.getDouble("ripple");
+                    double valorVenda = quantidadeRipple * precoRipple;
+                    double tx = 0.01 * valorVenda;
+                    double valorRecebido = valorVenda - tx;
+
+                    double novoSaldoReal = saldoAtual + valorRecebido;
+                    double novoSaldoRipple = saldoRipple - quantidadeRipple;
+                    dao.atualizarSaldoReais(investidor, novoSaldoReal);
+                    dao.atualizarSaldoRipple(investidor, novoSaldoRipple);
+
+                    String data = LocalDate.now().format(DateTimeFormatter
+                                  .ofPattern("dd/MM/yyyy"));
+                    String hora = LocalTime.now().format(DateTimeFormatter
+                                  .ofPattern("HH:mm"));
+                    Extrato extrato = new Extrato(nome, cpf, data, hora, 
+                        quantidadeRipple, "XRP", novoSaldoReal, novoSaldoRipple,
+                        saldoEthereum, saldoBitcoin, 0.01, precoRipple, "-");
+                    dao.inserirExtrato(extrato);
+
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Venda de Ripple realizada com sucesso!", "Sucesso", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(vendeCripFrame, 
+                        "Erro ao obter o preço do Ripple.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(vendeCripFrame, 
+                    "Erro ao localizar investidor.", "Erro", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(vendeCripFrame, 
+                "Erro ao realizar a venda: " + e.getMessage(), "Erro", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
