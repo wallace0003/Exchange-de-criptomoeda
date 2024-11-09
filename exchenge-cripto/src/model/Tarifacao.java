@@ -2,10 +2,12 @@
 package model;
 
 
-interface Tarifacao {
+public interface Tarifacao {
     
-    default double calculaTaxa (double valor, double taxa){
-        return valor * taxa;
-    }
+    public double calculaTaxa (double valor, double taxa);
+        
     
+    
+    public double aplicarVariacao(double precoAtual);
+ 
 }

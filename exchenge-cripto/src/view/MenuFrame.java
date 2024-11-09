@@ -300,6 +300,11 @@ public class MenuFrame extends javax.swing.JFrame {
         buAtualizarCota.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         buAtualizarCota.setForeground(new java.awt.Color(255, 0, 0));
         buAtualizarCota.setText("Atualizar cotações");
+        buAtualizarCota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buAtualizarCotaActionPerformed(evt);
+            }
+        });
 
         buSair.setBackground(new java.awt.Color(255, 255, 255));
         buSair.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
@@ -511,6 +516,10 @@ public class MenuFrame extends javax.swing.JFrame {
     private void buVenderCriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buVenderCriActionPerformed
         cLogin.menuParaVenderCripto();
     }//GEN-LAST:event_buVenderCriActionPerformed
+
+    private void buAtualizarCotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buAtualizarCotaActionPerformed
+        cLogin.novaCotacao();
+    }//GEN-LAST:event_buAtualizarCotaActionPerformed
     
     
     private ControllerLogin cLogin;

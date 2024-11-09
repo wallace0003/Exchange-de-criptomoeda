@@ -301,6 +301,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Atualizar cota&#xe7;&#xf5;es"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buAtualizarCotaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buSair">
       <Properties>

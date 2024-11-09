@@ -9,10 +9,14 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import javax.swing.JOptionPane;
+import model.Bitcoin;
 import model.Carteira;
+import model.Ethereum;
 import model.Extrato;
 import model.Moeda;
+import model.Ripple;
 import view.CadastroFrame;
 import view.ComprarCripFrame;
 import view.ConsulExtratoFrame;
@@ -1248,6 +1252,49 @@ public class ControllerLogin {
             JOptionPane.showMessageDialog(vendeCripFrame, 
                 "Erro ao realizar a venda: " + e.getMessage(), "Erro", 
                 JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    // lógica do controller para atualizar a cotacao.
+    public void novaCotacao() {
+        try (Connection conn = new Conexao().getConnection()) {
+            InvestidorDAO dao = new InvestidorDAO(conn);
+
+            ResultSet resPreco = dao.consultarPreco();
+            if (resPreco.next()) {
+                double precoBitcoin = resPreco.getDouble("bitcoin");
+                double precoEthereum = resPreco.getDouble("ethereum");
+                double precoRipple = resPreco.getDouble("ripple");
+                Bitcoin bitcoin = new Bitcoin("Bitcoin", precoBitcoin);
+                Ripple ripple = new Ripple("Ripple", precoRipple);
+                Ethereum ethereum = new Ethereum ("Ethereu", precoEthereum);
+
+                double novoPrecoBitcoin = bitcoin.aplicarVariacao(precoBitcoin);
+                double novoPrecoEthereum = ethereum.
+                                           aplicarVariacao(precoEthereum);
+                double novoPrecoRipple = ripple.aplicarVariacao(precoRipple);
+
+                dao.atualizarCotacao(novoPrecoBitcoin, novoPrecoEthereum, 
+                                     novoPrecoRipple);
+
+                menuFrame.getjLBitcoin().setText
+                (String.format("%.2f", novoPrecoBitcoin));
+                menuFrame.getjLEthereum().setText
+                (String.format("%.2f", novoPrecoEthereum));
+                menuFrame.getjLRipple().setText
+                (String.format("%.2f", novoPrecoRipple));
+
+                JOptionPane.showMessageDialog(menuFrame, 
+                        "Cotações atualizadas com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(menuFrame, 
+                        "Erro ao obter as cotações.", "Erro", 
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(menuFrame, 
+                    "Erro ao atualizar as cotações: " + e.getMessage(), 
+                    "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
