@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Ethereum extends Moeda implements Tarifacao{
     
     public Ethereum(String tipo, double valor) {
@@ -30,4 +32,11 @@ public class Ethereum extends Moeda implements Tarifacao{
     public double calculaTaxa(double valor, double taxa){
         return valor * taxa;
     } 
+    
+    @Override
+    public double aplicarVariacao(double precoAtual) {
+        Random random = new Random();
+        double variacaoPercentual = -0.05 + (0.10) * random.nextDouble(); 
+        return precoAtual * (1 + variacaoPercentual);
+    }
 }

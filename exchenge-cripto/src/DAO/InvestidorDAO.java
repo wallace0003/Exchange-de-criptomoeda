@@ -141,6 +141,19 @@ public class InvestidorDAO {
         statement.execute();
         return statement.getResultSet();
     }
+    
+    public void atualizarCotacao(double precoBitcoin, double precoEthereum, 
+                                 double precoRipple) throws SQLException{
+        String sql = "UPDATE investidores.preco "
+                   + "SET bitcoin = ?, ethereum = ?, ripple = ?";
+
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setDouble(1, precoBitcoin);
+        statement.setDouble(2, precoEthereum);
+        statement.setDouble(3, precoRipple);
+
+        statement.executeUpdate();
+    }
 
     
 }
