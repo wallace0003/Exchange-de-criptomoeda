@@ -1297,4 +1297,5 @@ public class ControllerLogin {
                     "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
 }

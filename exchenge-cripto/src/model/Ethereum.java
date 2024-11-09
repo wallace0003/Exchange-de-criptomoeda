@@ -2,7 +2,7 @@ package model;
 
 import java.util.Random;
 
-public class Ethereum extends Moeda implements Tarifacao{
+public class Ethereum extends Moeda implements Tarifacao, Taxacao {
     
     public Ethereum(String tipo, double valor) {
         super(tipo, valor);
