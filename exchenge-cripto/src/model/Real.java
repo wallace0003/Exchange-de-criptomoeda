@@ -3,7 +3,7 @@ package model;
 import java.util.Random;
 
 
-public class Real extends Moeda implements Tarifacao{
+public class Real extends Moeda implements Tarifacao, Taxacao { 
 
     public Real(String tipo, double valor) {
         super(tipo, valor);
@@ -34,6 +34,7 @@ public class Real extends Moeda implements Tarifacao{
         return valor * taxa;
     }
 
+    @Override
     public double aplicarVariacao(double precoAtual) {
         Random random = new Random();
         double variacaoPercentual = -0.05 + (0.10) * random.nextDouble(); 

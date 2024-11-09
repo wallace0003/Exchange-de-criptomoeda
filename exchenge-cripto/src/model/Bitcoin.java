@@ -2,7 +2,7 @@ package model;
 
 import java.util.Random;
 
-public class Bitcoin extends Moeda implements Tarifacao{
+public class Bitcoin extends Moeda implements Tarifacao, Taxacao {
 
     public Bitcoin(String tipo, double valor) {
         super(tipo, valor);

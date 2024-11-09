@@ -4,7 +4,7 @@ package model;
 import java.util.Random;
 
 
-public class Ripple extends Moeda implements Tarifacao {
+public class Ripple extends Moeda implements Tarifacao, Taxacao {
 
     public Ripple(String tipo, double valor) {
         super(tipo, valor);

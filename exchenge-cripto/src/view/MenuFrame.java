@@ -324,9 +324,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Nome:");
 
+        jLCpf.setBackground(new java.awt.Color(102, 102, 102));
         jLCpf.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         jLCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
+        jLNome.setBackground(new java.awt.Color(102, 102, 102));
         jLNome.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
         jLNome.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
@@ -342,6 +344,7 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("Ripple:");
 
+        jLBitcoin.setBackground(new java.awt.Color(102, 102, 102));
         jLBitcoin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
