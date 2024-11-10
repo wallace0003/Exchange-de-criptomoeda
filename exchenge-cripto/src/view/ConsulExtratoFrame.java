@@ -3,9 +3,9 @@ package view;
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 
 public class ConsulExtratoFrame extends javax.swing.JFrame {
@@ -14,6 +14,15 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         initComponents();
         this.cLogin = cLogin;
     }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
+    }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+    
 
     public void setBuConsultarExtrato(JButton buConsultarExtrato) {
         this.buConsultarExtrato = buConsultarExtrato;
@@ -43,11 +52,6 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         this.textAreaExtrato = textAreaExtrato;
     }
 
-    public void setTextSenha(JTextField textSenha) {
-        this.textSenha = textSenha;
-    }
-    
-
     public JButton getBuConsultarExtrato() {
         return buConsultarExtrato;
     }
@@ -76,13 +80,6 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         return textAreaExtrato;
     }
 
-    public JTextField getTextSenha() {
-        return textSenha;
-    }
-    
-    
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -90,11 +87,11 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        textSenha = new javax.swing.JTextField();
         buConsultarExtrato = new javax.swing.JButton();
         buMenu = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         textAreaExtrato = new javax.swing.JTextArea();
+        textSenha = new javax.swing.JPasswordField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -130,6 +127,9 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         textAreaExtrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 0)));
         jScrollPane2.setViewportView(textAreaExtrato);
 
+        textSenha.setBackground(new java.awt.Color(204, 204, 204));
+        textSenha.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,32 +137,31 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 93, Short.MAX_VALUE))
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 116, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(buMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buConsultarExtrato, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buConsultarExtrato)
@@ -192,6 +191,6 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea textAreaExtrato;
-    private javax.swing.JTextField textSenha;
+    private javax.swing.JPasswordField textSenha;
     // End of variables declaration//GEN-END:variables
 }

@@ -105,11 +105,14 @@ public class DepositarFrame extends javax.swing.JFrame {
 
         jLValorAtualRef.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLValorAtualRef.setForeground(new java.awt.Color(0, 0, 0));
-        jLValorAtualRef.setText("Valor atual:");
+        jLValorAtualRef.setText("Saldo:");
 
         jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Digite o valor de depósito no campo abaixo:");
+
+        textValorDeposito.setBackground(new java.awt.Color(204, 204, 204));
+        textValorDeposito.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +144,7 @@ public class DepositarFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(textValorDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buMenu)
                     .addComponent(buDepositar))

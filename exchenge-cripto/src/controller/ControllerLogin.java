@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 import javax.swing.JOptionPane;
 import model.Bitcoin;
 import model.Carteira;
@@ -63,7 +62,7 @@ public class ControllerLogin {
     //Constroller para a lógica do login do usuário
     public void realizarLogin(){
     Investidor investidor = new 
-        Investidor(loginFrame.getTextSenha().getText(), null, null,
+        Investidor(new String(loginFrame.getTextSenha().getPassword()), null, null,
                    loginFrame.getTextCpf().getText());
     Conexao conexao = new Conexao();
         try {
@@ -157,7 +156,7 @@ public class ControllerLogin {
     public void cadastrarInvestido(){
         String nome = cadastroFrame.getTextNome().getText();
         String cpf = cadastroFrame.getTextCpf().getText();
-        String senha = cadastroFrame.getTextSenha().getText();
+        String senha = new String (cadastroFrame.getTextSenha().getPassword());
         Moeda real = new Moeda ("real", 0.0);
         Moeda bitcoin = new Moeda("bitcoin", 0.0);
         Moeda ripple = new Moeda ("ripple", 0.0);
@@ -181,8 +180,8 @@ public class ControllerLogin {
         }}
         else{
             JOptionPane.showMessageDialog(cadastroFrame, 
-                                    "A senha deve conter exatamente 6 números."
-                                     + "CPF deve conter 11 números exatamente.",
+                                    "A senha deve conter exatamente 6 números.\n"
+                                    + "CPF deve conter 11.",
                                     "Erro", JOptionPane.ERROR_MESSAGE);
         } 
     }
@@ -207,7 +206,8 @@ public class ControllerLogin {
     }
     
     public void exibeSaldo(){
-        String senhaFornecida = consulSaldoFrame.getTextSenha().getText();
+        String senhaFornecida = new String(
+                consulSaldoFrame.getTextSenha().getPassword());
 
         // Verifica se a senha foi fornecida
         if (senhaFornecida.isEmpty()) {
@@ -262,10 +262,8 @@ public class ControllerLogin {
     public void depositarParaMenu(){
         depositarFrame.setVisible(false);
         menuFrame.setVisible(true);
-        depositarFrame.getjLValorAtual().setText
-                               ("");
-        depositarFrame.getjLValorAtualRef().setText
-                               ("");
+        depositarFrame.getjLValorAtual().setText("");
+        depositarFrame.getjLValorAtualRef().setText("");
     }
     
     public void depositar(){
@@ -331,12 +329,13 @@ public class ControllerLogin {
 
                 // Atualiza o label de saldo com o novo valor
                 depositarFrame.getjLValorAtualRef().setText
-                               ("Valor Atual:");
+                               ("Saldo:");
                 depositarFrame.getjLValorAtual().setText
                                (String.format("%.2f", novoSaldo));
                 JOptionPane.showMessageDialog(depositarFrame, 
                                     "Depósito realizado com sucesso!", 
                                     "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                depositarFrame.getTextValorDeposito().setText("");
             }else {
                 JOptionPane.showMessageDialog(depositarFrame, 
                    "Erro ao localizar investidor.", "Erro", 
@@ -350,7 +349,7 @@ public class ControllerLogin {
     }
     
     
-    //Controller para a lógica do  extrato
+    //Controller para a lógica do extrato
     public void menuParaExtrato(){
         menuFrame.setVisible(false);
         consulExtratoFrame.setVisible(true);
@@ -366,7 +365,8 @@ public class ControllerLogin {
     }
     
     public void consulExtrato() {
-        String senhaFornecida = consulExtratoFrame.getTextSenha().getText();
+        String senhaFornecida = new String(
+                               consulExtratoFrame.getTextSenha().getPassword());
 
         // Verifica se a senha foi fornecida
         if (senhaFornecida.isEmpty()) {
@@ -442,16 +442,19 @@ public class ControllerLogin {
     //Controller para lógica do sacar
     public void menuParaSacar(){
         menuFrame.setVisible(false);
+        sacarFrame.getjLValorAtualRef().setText
+                               ("");
         sacarFrame.setVisible(true);
     }
     
     public void sacarParaMenu(){
         sacarFrame.setVisible(false);
         menuFrame.setVisible(true);
+        sacarFrame.getjLValorAtual().setText("");
+        sacarFrame.getjLValorAtualRef().setText("");
     }
     
     public void sacar() {
-        // Obtém o valor do saque do campo de texto
         String valorSaqueStr = sacarFrame.getTextValorSaque().getText();
 
         // Verifica se o valor inserido é válido
@@ -487,7 +490,6 @@ public class ControllerLogin {
         try (Connection conn = new Conexao().getConnection()) {
             InvestidorDAO dao = new InvestidorDAO(conn);
 
-            // Obtém o saldo atual do investidor
             ResultSet res = dao.consultarInvestidorPorCpf(investidor);
             if (res.next()) {
                 double saldoAtual = res.getDouble("real");
@@ -520,9 +522,10 @@ public class ControllerLogin {
                 dao.atualizarSaldoReais(investidor, novoSaldo);
 
                 // Atualiza o label de saldo com o novo valor
-                sacarFrame.getjLValorAtualRef().setText("Saldo Atual:");
+                sacarFrame.getjLValorAtualRef().setText("Saldo:");
                 sacarFrame.getjLValorAtual().setText
                 (String.format("%.2f", novoSaldo));
+                sacarFrame.getTextValorSaque().setText("");
 
                 JOptionPane.showMessageDialog(sacarFrame, 
                         "Saque realizado com sucesso!", 

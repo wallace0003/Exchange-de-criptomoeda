@@ -2,6 +2,7 @@ package view;
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
@@ -12,6 +13,16 @@ public class CadastroFrame extends javax.swing.JFrame {
         initComponents();
         this.cLogin = cLogin;
     }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
+    }
+    
+    
 
     public void setjLabel1(JLabel jLabel1) {
         this.jLabel1 = jLabel1;
@@ -35,10 +46,6 @@ public class CadastroFrame extends javax.swing.JFrame {
 
     public void setTextCpf(JTextField textCpf) {
         this.textCpf = textCpf;
-    }
-
-    public void setTextSenha(JTextField textSenha) {
-        this.textSenha = textSenha;
     }
 
     public void setTextNome(JTextField textNome) {
@@ -69,16 +76,9 @@ public class CadastroFrame extends javax.swing.JFrame {
         return textCpf;
     }
 
-    public JTextField getTextSenha() {
-        return textSenha;
-    }
-
     public JTextField getTextNome() {
         return textNome;
     }
-    
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -89,15 +89,21 @@ public class CadastroFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         textCpf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        textSenha = new javax.swing.JTextField();
         jbCadastrar = new javax.swing.JButton();
         jbvoltarLogar = new javax.swing.JButton();
+        textSenha = new javax.swing.JPasswordField();
 
         jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel1.setText("Nome:");
 
+        textNome.setBackground(new java.awt.Color(204, 204, 204));
+        textNome.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel2.setText("CPF:");
+
+        textCpf.setBackground(new java.awt.Color(204, 204, 204));
+        textCpf.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jLabel3.setText("Senha:");
@@ -122,6 +128,9 @@ public class CadastroFrame extends javax.swing.JFrame {
             }
         });
 
+        textSenha.setBackground(new java.awt.Color(204, 204, 204));
+        textSenha.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,23 +139,23 @@ public class CadastroFrame extends javax.swing.JFrame {
                 .addGap(130, 130, 130)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbCadastrar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbvoltarLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(161, Short.MAX_VALUE))
+                        .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jbCadastrar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbvoltarLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,11 +172,11 @@ public class CadastroFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbCadastrar)
-                    .addComponent(jbvoltarLogar))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(jbvoltarLogar)
+                    .addComponent(jbCadastrar))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -184,7 +193,6 @@ public class CadastroFrame extends javax.swing.JFrame {
 
 
     private ControllerLogin cLogin;
-    private LoginFrame viewLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -193,6 +201,6 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JButton jbvoltarLogar;
     private javax.swing.JTextField textCpf;
     private javax.swing.JTextField textNome;
-    private javax.swing.JTextField textSenha;
+    private javax.swing.JPasswordField textSenha;
     // End of variables declaration//GEN-END:variables
 }

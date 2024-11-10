@@ -1,11 +1,10 @@
-
 package view;
 
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 
 public class ConsulSaldoFrame extends javax.swing.JFrame {
@@ -14,6 +13,14 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     public ConsulSaldoFrame(ControllerLogin cLogin) {
         initComponents();
         this.cLogin = cLogin;
+    }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
     }
 
     public void setcLogin(ControllerLogin cLogin) {
@@ -26,10 +33,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
 
     public void setjBMenu(JButton jBMenu) {
         this.jBMenu = jBMenu;
-    }
-
-    public void setjLNome(JLabel jLNome) {
-        this.jLNome = jLNome;
     }
 
     public void setjLValorBitcoin(JLabel jLValorBitcoin) {
@@ -82,10 +85,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         this.jPanel1 = jPanel1;
     }
 
-    public void setTextSenha(JTextField textSenha) {
-        this.textSenha = textSenha;
-    }
-
     public ControllerLogin getcLogin() {
         return cLogin;
     }
@@ -96,10 +95,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
 
     public JButton getjBMenu() {
         return jBMenu;
-    }
-
-    public JLabel getjLNome() {
-        return jLNome;
     }
 
     public JLabel getjLValorBitcoin() {
@@ -149,20 +144,13 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     public JPanel getjPanel1() {
         return jPanel1;
     }
-
-    public JTextField getTextSenha() {
-        return textSenha;
-    }
     
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLNome = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -175,12 +163,8 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jLValorBitcoin = new javax.swing.JLabel();
         jBMenu = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        textSenha = new javax.swing.JTextField();
         jBConsultarSaldo = new javax.swing.JButton();
-
-        jLNome.setBackground(new java.awt.Color(255, 255, 255));
-        jLNome.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLNome.setForeground(new java.awt.Color(255, 0, 0));
+        textSenha = new javax.swing.JPasswordField();
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -274,7 +258,7 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         );
 
         jBMenu.setBackground(new java.awt.Color(255, 255, 255));
-        jBMenu.setFont(new java.awt.Font("URW Bookman", 0, 14)); // NOI18N
+        jBMenu.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jBMenu.setForeground(new java.awt.Color(255, 0, 0));
         jBMenu.setText("Menu");
         jBMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -287,14 +271,8 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 0, 0));
         jLabel8.setText("Senha:");
 
-        textSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSenhaActionPerformed(evt);
-            }
-        });
-
         jBConsultarSaldo.setBackground(new java.awt.Color(255, 255, 255));
-        jBConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 0, 14)); // NOI18N
+        jBConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
         jBConsultarSaldo.setForeground(new java.awt.Color(255, 0, 0));
         jBConsultarSaldo.setText("Consultar saldo");
         jBConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
@@ -302,6 +280,9 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
                 jBConsultarSaldoActionPerformed(evt);
             }
         });
+
+        textSenha.setBackground(new java.awt.Color(204, 204, 204));
+        textSenha.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -318,12 +299,10 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
+                                        .addGap(102, 102, 102)
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 54, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBMenu)
@@ -334,14 +313,12 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -353,10 +330,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void textSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSenhaActionPerformed
-        
-    }//GEN-LAST:event_textSenhaActionPerformed
 
     private void jBConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultarSaldoActionPerformed
         cLogin.exibeSaldo();
@@ -371,7 +344,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBConsultarSaldo;
     private javax.swing.JButton jBMenu;
-    private javax.swing.JLabel jLNome;
     private javax.swing.JLabel jLValorBitcoin;
     private javax.swing.JLabel jLValorEthereum;
     private javax.swing.JLabel jLValorRipple;
@@ -384,6 +356,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLvalorReais;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textSenha;
+    private javax.swing.JPasswordField textSenha;
     // End of variables declaration//GEN-END:variables
 }

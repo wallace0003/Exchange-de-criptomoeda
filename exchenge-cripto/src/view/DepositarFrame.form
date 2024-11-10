@@ -52,7 +52,7 @@
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="textValorDeposito" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buMenu" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buDepositar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Valor atual:"/>
+        <Property name="text" type="java.lang.String" value="Saldo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLValorAtual">
@@ -122,6 +122,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textValorDeposito">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Bookman" size="12" style="1"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
