@@ -173,6 +173,10 @@ public class ControllerLogin {
             dao.inserirInvestidor(investidor);
             JOptionPane.showMessageDialog(cadastroFrame, "Investidor cadastrado"
                     ,"Aviso", JOptionPane.INFORMATION_MESSAGE);
+            cadastroFrame.getTextNome().setText("");
+            cadastroFrame.getTextCpf().setText("");
+            cadastroFrame.getTextSenha().setText("");
+            
         }catch(SQLException e){
             JOptionPane.showMessageDialog(cadastroFrame, "Investidor "
                                           + "não cadastrado!"+ e.getMessage(),
