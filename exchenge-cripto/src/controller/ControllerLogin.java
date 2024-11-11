@@ -411,7 +411,7 @@ public class ControllerLogin {
                     .append(extratoRes.getString("sinal")).append(" ")
                     .append(extratoRes.getString("valor")).append(" ")
                     .append(extratoRes.getString("tipomoeda")).append("\n");
-                    extrato.append("CT: ").append
+                    extrato.append("Cotação: ").append
                     (extratoRes.getDouble("ct")).append("\n");
                     extrato.append("Taxa: ").append
                     (extratoRes.getDouble("taxa")).append("\n");
@@ -423,7 +423,8 @@ public class ControllerLogin {
                     .append(extratoRes.getDouble("ethereum")).append("\n");
                     extrato.append("Saldo Ripple: ")
                     .append(extratoRes.getDouble("ripple")).append("\n");
-                    extrato.append("--------------------------------------\n");
+                    extrato.append("--------------------------"
+                            + "--------------------------------------------\n");
                 }
                 consulExtratoFrame.getTextAreaExtrato()
                                    .setText(extrato.toString());
