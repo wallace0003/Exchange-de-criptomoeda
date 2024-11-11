@@ -80,79 +80,59 @@ public class SacarFrame extends javax.swing.JFrame {
         jLValorAtual = new javax.swing.JLabel();
         buSacar = new javax.swing.JButton();
         buMenu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Valor do saque:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
-        textValorSaque.setBackground(new java.awt.Color(204, 204, 204));
-        textValorSaque.setFont(new java.awt.Font("URW Bookman", 0, 12)); // NOI18N
+        textValorSaque.setBackground(new java.awt.Color(51, 51, 51));
+        textValorSaque.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        textValorSaque.setForeground(new java.awt.Color(255, 255, 255));
+        textValorSaque.setBorder(null);
+        getContentPane().add(textValorSaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 190, -1));
 
-        jLValorAtualRef.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLValorAtualRef.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        jLValorAtualRef.setForeground(new java.awt.Color(204, 204, 204));
         jLValorAtualRef.setText("Saldo atual:");
+        getContentPane().add(jLValorAtualRef, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
-        buSacar.setBackground(new java.awt.Color(255, 255, 255));
-        buSacar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buSacar.setForeground(new java.awt.Color(255, 0, 0));
+        jLValorAtual.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLValorAtual.setForeground(new java.awt.Color(255, 255, 255));
+        jLValorAtual.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLValorAtual.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(jLValorAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 150, 21));
+
+        buSacar.setBackground(new java.awt.Color(102, 255, 255));
+        buSacar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        buSacar.setForeground(new java.awt.Color(0, 0, 51));
         buSacar.setText("Sacar");
+        buSacar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         buSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSacarActionPerformed(evt);
             }
         });
+        getContentPane().add(buSacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 180, -1));
 
-        buMenu.setBackground(new java.awt.Color(255, 255, 255));
-        buMenu.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buMenu.setForeground(new java.awt.Color(255, 0, 0));
+        buMenu.setBackground(new java.awt.Color(102, 255, 255));
+        buMenu.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
+        buMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 170, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(buSacar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textValorSaque, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLValorAtualRef)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLValorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(textValorSaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLValorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLValorAtualRef))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buSacar)
-                    .addComponent(buMenu))
-                .addContainerGap())
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoSaldo .jpeg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 467));
 
         pack();
         setLocationRelativeTo(null);
@@ -175,6 +155,7 @@ public class SacarFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLValorAtual;
     private javax.swing.JLabel jLValorAtualRef;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField textValorSaque;
     // End of variables declaration//GEN-END:variables
 }
