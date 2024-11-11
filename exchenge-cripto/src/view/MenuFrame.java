@@ -250,7 +250,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buConsultarSaldoActionPerformed(evt);
             }
         });
-        getContentPane().add(buConsultarSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 188, -1));
+        getContentPane().add(buConsultarSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 188, -1));
 
         buConsultarExtrato.setBackground(new java.awt.Color(0, 255, 255));
         buConsultarExtrato.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -262,7 +262,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buConsultarExtratoActionPerformed(evt);
             }
         });
-        getContentPane().add(buConsultarExtrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 188, -1));
+        getContentPane().add(buConsultarExtrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 188, -1));
 
         buDepositar.setBackground(new java.awt.Color(0, 255, 255));
         buDepositar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -274,7 +274,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buDepositarActionPerformed(evt);
             }
         });
-        getContentPane().add(buDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 212, -1));
+        getContentPane().add(buDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 212, -1));
 
         buSacar.setBackground(new java.awt.Color(0, 255, 255));
         buSacar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -286,7 +286,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buSacarActionPerformed(evt);
             }
         });
-        getContentPane().add(buSacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 212, -1));
+        getContentPane().add(buSacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 212, -1));
 
         buComprarCri.setBackground(new java.awt.Color(0, 255, 255));
         buComprarCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -298,7 +298,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buComprarCriActionPerformed(evt);
             }
         });
-        getContentPane().add(buComprarCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        getContentPane().add(buComprarCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
         buVenderCri.setBackground(new java.awt.Color(0, 255, 255));
         buVenderCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -310,7 +310,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buVenderCriActionPerformed(evt);
             }
         });
-        getContentPane().add(buVenderCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 212, -1));
+        getContentPane().add(buVenderCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 212, -1));
 
         buAtualizarCota.setBackground(new java.awt.Color(0, 255, 255));
         buAtualizarCota.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
@@ -322,7 +322,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 buAtualizarCotaActionPerformed(evt);
             }
         });
-        getContentPane().add(buAtualizarCota, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 207, -1));
+        getContentPane().add(buAtualizarCota, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 207, -1));
 
         buSair.setBackground(new java.awt.Color(0, 255, 255));
         buSair.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N

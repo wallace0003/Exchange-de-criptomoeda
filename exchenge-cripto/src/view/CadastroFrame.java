@@ -96,28 +96,34 @@ public class CadastroFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText("Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
 
         textNome.setBackground(new java.awt.Color(102, 102, 102));
         textNome.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         textNome.setForeground(new java.awt.Color(255, 255, 255));
         textNome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(textNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 153, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("CPF:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, -1, -1));
 
         textCpf.setBackground(new java.awt.Color(102, 102, 102));
         textCpf.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         textCpf.setForeground(new java.awt.Color(255, 255, 255));
         textCpf.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(textCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 153, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("Senha:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
         jbCadastrar.setBackground(new java.awt.Color(0, 255, 255));
         jbCadastrar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
@@ -129,6 +135,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                 jbCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jbCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 145, -1));
 
         jbvoltarLogar.setBackground(new java.awt.Color(0, 255, 255));
         jbvoltarLogar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
@@ -140,76 +147,20 @@ public class CadastroFrame extends javax.swing.JFrame {
                 jbvoltarLogarActionPerformed(evt);
             }
         });
+        getContentPane().add(jbvoltarLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 144, -1));
 
         textSenha.setBackground(new java.awt.Color(102, 102, 102));
         textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         textSenha.setForeground(new java.awt.Color(255, 255, 255));
         textSenha.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 153, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastro.jpeg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoAzul.jpeg"))); // NOI18N
         jLabel4.setText("jLabel5");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jLabel6))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel3)
-                .addGap(4, 4, 4)
-                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jbCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(jbvoltarLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel1))
-            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel6)
-                .addGap(11, 11, 11)
-                .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addComponent(jbCadastrar))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(jLabel2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(jbvoltarLogar))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel1))
-            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 446));
         jLabel4.getAccessibleContext().setAccessibleDescription("");
 
         pack();
