@@ -78,6 +78,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textSenha.setBackground(new java.awt.Color(102, 102, 102));
         textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -88,11 +89,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 textSenhaActionPerformed(evt);
             }
         });
+        getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 121, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Senha:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
 
         textCpf.setBackground(new java.awt.Color(102, 102, 102));
         textCpf.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -103,10 +106,12 @@ public class LoginFrame extends javax.swing.JFrame {
                 textCpfActionPerformed(evt);
             }
         });
+        getContentPane().add(textCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("CPF:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, -1));
 
         buCadastro.setBackground(new java.awt.Color(51, 255, 255));
         buCadastro.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
@@ -118,6 +123,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 buCadastroActionPerformed(evt);
             }
         });
+        getContentPane().add(buCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 159, 42));
 
         buEntrar.setBackground(new java.awt.Color(51, 255, 255));
         buEntrar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
@@ -129,55 +135,10 @@ public class LoginFrame extends javax.swing.JFrame {
                 buEntrarActionPerformed(evt);
             }
         });
+        getContentPane().add(buEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 150, 42));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/0c6307cb-2ec6-4094-abb2-9af091bd5d84.jpeg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jLabel2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jLabel1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(buCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(buEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel3)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(jLabel2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jLabel1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(400, 400, 400)
-                .addComponent(buCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(400, 400, 400)
-                .addComponent(buEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel3)
-        );
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

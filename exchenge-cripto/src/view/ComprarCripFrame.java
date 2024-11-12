@@ -236,43 +236,43 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         buComprarEthereum.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         buComprarEthereum.setForeground(new java.awt.Color(0, 0, 51));
         buComprarEthereum.setText("Comprar");
-        buComprarEthereum.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buComprarEthereum.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buComprarEthereum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buComprarEthereumActionPerformed(evt);
             }
         });
-        getContentPane().add(buComprarEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+        getContentPane().add(buComprarEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 90, -1));
 
         buComprarRipple.setBackground(new java.awt.Color(51, 255, 255));
         buComprarRipple.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         buComprarRipple.setForeground(new java.awt.Color(0, 0, 51));
         buComprarRipple.setText("Comprar");
-        buComprarRipple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buComprarRipple.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buComprarRipple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buComprarRippleActionPerformed(evt);
             }
         });
-        getContentPane().add(buComprarRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+        getContentPane().add(buComprarRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 90, -1));
 
         buComprarBitcoin.setBackground(new java.awt.Color(51, 255, 255));
         buComprarBitcoin.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         buComprarBitcoin.setForeground(new java.awt.Color(0, 0, 51));
         buComprarBitcoin.setText("Comprar");
-        buComprarBitcoin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buComprarBitcoin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buComprarBitcoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buComprarBitcoinActionPerformed(evt);
             }
         });
-        getContentPane().add(buComprarBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        getContentPane().add(buComprarBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 90, -1));
 
         buMenu.setBackground(new java.awt.Color(51, 255, 255));
         buMenu.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
-        buMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
@@ -283,6 +283,7 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         textValorRipple.setBackground(new java.awt.Color(102, 102, 102));
         textValorRipple.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         textValorRipple.setForeground(new java.awt.Color(255, 255, 255));
+        textValorRipple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         textValorRipple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textValorRippleActionPerformed(evt);
@@ -293,6 +294,7 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         textValorEthereum.setBackground(new java.awt.Color(102, 102, 102));
         textValorEthereum.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         textValorEthereum.setForeground(new java.awt.Color(255, 255, 255));
+        textValorEthereum.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         textValorEthereum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textValorEthereumActionPerformed(evt);
@@ -303,6 +305,7 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         textValorBitcoin.setBackground(new java.awt.Color(102, 102, 102));
         textValorBitcoin.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         textValorBitcoin.setForeground(new java.awt.Color(255, 255, 255));
+        textValorBitcoin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         textValorBitcoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textValorBitcoinActionPerformed(evt);
@@ -313,57 +316,53 @@ public class ComprarCripFrame extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("R$");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Bitcoin:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Ethereum:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Ripple:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
 
         jLBitcoin.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLBitcoin.setForeground(new java.awt.Color(255, 255, 255));
-        jLBitcoin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 102, 20));
+        getContentPane().add(jLBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 102, 20));
 
         jLEthereum.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLEthereum.setForeground(new java.awt.Color(255, 255, 255));
-        jLEthereum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLEthereum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 102, 20));
+        getContentPane().add(jLEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 102, 20));
 
         jLRipple.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLRipple.setForeground(new java.awt.Color(255, 255, 255));
-        jLRipple.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLRipple.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 102, 20));
+        getContentPane().add(jLRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 102, 20));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("R$");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, 14));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, -1, 14));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("R$");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 14));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, -1, 14));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dialog", 3, 25)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("Cotação de cada criptomoeda ->");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+        jLabel7.setText("Cotação Criptomoedas → ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
