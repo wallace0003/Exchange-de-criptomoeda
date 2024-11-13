@@ -1034,7 +1034,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         """
                         Saldo de Bitcoin insuficiente para realizar a venda.
-                        Saldo atual: """ + saldoEthereum, 
+                        Saldo atual: """ + saldoBitcoin, 
                         "Erro", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
