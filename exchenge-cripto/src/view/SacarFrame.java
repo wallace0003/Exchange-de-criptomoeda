@@ -90,7 +90,7 @@ public class SacarFrame extends javax.swing.JFrame {
         jLabel1.setText("Valor do saque:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
-        textValorSaque.setBackground(new java.awt.Color(51, 51, 51));
+        textValorSaque.setBackground(new java.awt.Color(102, 102, 102));
         textValorSaque.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         textValorSaque.setForeground(new java.awt.Color(255, 255, 255));
         textValorSaque.setBorder(null);
@@ -111,7 +111,7 @@ public class SacarFrame extends javax.swing.JFrame {
         buSacar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         buSacar.setForeground(new java.awt.Color(0, 0, 51));
         buSacar.setText("Sacar");
-        buSacar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buSacar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSacarActionPerformed(evt);
@@ -123,7 +123,7 @@ public class SacarFrame extends javax.swing.JFrame {
         buMenu.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
-        buMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);

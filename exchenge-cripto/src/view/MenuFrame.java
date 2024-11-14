@@ -244,7 +244,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buConsultarSaldo.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buConsultarSaldo.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarSaldo.setText("Consultar Saldo");
-        buConsultarSaldo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buConsultarSaldo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarSaldoActionPerformed(evt);
@@ -256,7 +256,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buConsultarExtrato.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buConsultarExtrato.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarExtrato.setText("Consultar extrato");
-        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarExtrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarExtratoActionPerformed(evt);
@@ -268,7 +268,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buDepositar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buDepositar.setForeground(new java.awt.Color(0, 0, 51));
         buDepositar.setText("Depositar");
-        buDepositar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buDepositar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buDepositarActionPerformed(evt);
@@ -280,7 +280,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buSacar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buSacar.setForeground(new java.awt.Color(0, 0, 51));
         buSacar.setText("Sacar");
-        buSacar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buSacar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSacarActionPerformed(evt);
@@ -292,7 +292,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buComprarCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buComprarCri.setForeground(new java.awt.Color(0, 0, 51));
         buComprarCri.setText("Comprar Criptomoedas");
-        buComprarCri.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buComprarCri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buComprarCri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buComprarCriActionPerformed(evt);
@@ -304,7 +304,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buVenderCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buVenderCri.setForeground(new java.awt.Color(0, 0, 51));
         buVenderCri.setText("Vender Criptomoedas");
-        buVenderCri.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buVenderCri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buVenderCri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buVenderCriActionPerformed(evt);
@@ -316,7 +316,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buAtualizarCota.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buAtualizarCota.setForeground(new java.awt.Color(0, 0, 51));
         buAtualizarCota.setText("Atualizar cotações");
-        buAtualizarCota.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buAtualizarCota.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buAtualizarCota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buAtualizarCotaActionPerformed(evt);
@@ -328,7 +328,7 @@ public class MenuFrame extends javax.swing.JFrame {
         buSair.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         buSair.setForeground(new java.awt.Color(0, 0, 51));
         buSair.setText("Sair");
-        buSair.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buSair.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSairActionPerformed(evt);

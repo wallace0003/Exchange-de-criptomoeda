@@ -155,7 +155,7 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jBMenu.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jBMenu.setForeground(new java.awt.Color(0, 0, 51));
         jBMenu.setText("Menu");
-        jBMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jBMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMenuActionPerformed(evt);
@@ -172,7 +172,7 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         jBConsultarSaldo.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jBConsultarSaldo.setForeground(new java.awt.Color(0, 0, 51));
         jBConsultarSaldo.setText("Consultar saldo");
-        jBConsultarSaldo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jBConsultarSaldo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBConsultarSaldoActionPerformed(evt);
@@ -181,7 +181,7 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         getContentPane().add(jBConsultarSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 170, -1));
 
         textSenha.setBackground(new java.awt.Color(102, 102, 102));
-        textSenha.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         textSenha.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 120, -1));
 

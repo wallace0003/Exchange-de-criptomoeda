@@ -264,7 +264,7 @@ public class VendeCripFrame extends javax.swing.JFrame {
                 buMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 160, -1));
+        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 415, 160, 30));
 
         textValorBitcoin.setBackground(new java.awt.Color(102, 102, 102));
         textValorBitcoin.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N

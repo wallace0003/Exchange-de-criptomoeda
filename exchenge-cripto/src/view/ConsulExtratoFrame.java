@@ -111,7 +111,7 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         buConsultarExtrato.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
         buConsultarExtrato.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarExtrato.setText("Consultar extrato");
-        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarExtrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarExtratoActionPerformed(evt);
@@ -123,7 +123,7 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         buMenu.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
         buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
-        buMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
@@ -141,7 +141,7 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 303, 290));
 
-        textSenha.setBackground(new java.awt.Color(51, 51, 51));
+        textSenha.setBackground(new java.awt.Color(102, 102, 102));
         textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         textSenha.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 193, -1));

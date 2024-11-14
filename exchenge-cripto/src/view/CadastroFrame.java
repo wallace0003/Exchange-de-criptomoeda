@@ -129,7 +129,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         jbCadastrar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jbCadastrar.setForeground(new java.awt.Color(0, 0, 51));
         jbCadastrar.setText("Cadastrar");
-        jbCadastrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jbCadastrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCadastrarActionPerformed(evt);
@@ -141,7 +141,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         jbvoltarLogar.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jbvoltarLogar.setForeground(new java.awt.Color(0, 0, 51));
         jbvoltarLogar.setText("Voltar");
-        jbvoltarLogar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jbvoltarLogar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbvoltarLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbvoltarLogarActionPerformed(evt);

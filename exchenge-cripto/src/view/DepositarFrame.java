@@ -92,7 +92,7 @@ public class DepositarFrame extends javax.swing.JFrame {
         buMenu.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
         buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
-        buMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
@@ -104,7 +104,7 @@ public class DepositarFrame extends javax.swing.JFrame {
         buDepositar.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
         buDepositar.setForeground(new java.awt.Color(0, 0, 51));
         buDepositar.setText("Depositar");
-        buDepositar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buDepositar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buDepositarActionPerformed(evt);
