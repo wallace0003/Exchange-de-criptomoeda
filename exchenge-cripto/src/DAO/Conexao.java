@@ -12,7 +12,7 @@ public class Conexao {
             return conexao;
     }
     
-    //Método para testar se conexão está funcionando.
+//    //Método para testar se conexão está funcionando.
 //    public static void main(String[] args) {
 //        Conexao conexaoDB = new Conexao();
 //        

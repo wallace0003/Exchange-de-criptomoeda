@@ -235,258 +235,179 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
-        buConsultarSaldo.setBackground(new java.awt.Color(255, 255, 255));
-        buConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buConsultarSaldo.setForeground(new java.awt.Color(255, 0, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buConsultarSaldo.setBackground(new java.awt.Color(0, 255, 255));
+        buConsultarSaldo.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buConsultarSaldo.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarSaldo.setText("Consultar Saldo");
+        buConsultarSaldo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarSaldoActionPerformed(evt);
             }
         });
+        getContentPane().add(buConsultarSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 188, -1));
 
-        buConsultarExtrato.setBackground(new java.awt.Color(255, 255, 255));
-        buConsultarExtrato.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buConsultarExtrato.setForeground(new java.awt.Color(255, 0, 0));
+        buConsultarExtrato.setBackground(new java.awt.Color(0, 255, 255));
+        buConsultarExtrato.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buConsultarExtrato.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarExtrato.setText("Consultar extrato");
+        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarExtrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarExtratoActionPerformed(evt);
             }
         });
+        getContentPane().add(buConsultarExtrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 188, -1));
 
-        buDepositar.setBackground(new java.awt.Color(255, 255, 255));
-        buDepositar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buDepositar.setForeground(new java.awt.Color(255, 0, 0));
+        buDepositar.setBackground(new java.awt.Color(0, 255, 255));
+        buDepositar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buDepositar.setForeground(new java.awt.Color(0, 0, 51));
         buDepositar.setText("Depositar");
+        buDepositar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buDepositarActionPerformed(evt);
             }
         });
+        getContentPane().add(buDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 212, -1));
 
-        buSacar.setBackground(new java.awt.Color(255, 255, 255));
-        buSacar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buSacar.setForeground(new java.awt.Color(255, 0, 0));
+        buSacar.setBackground(new java.awt.Color(0, 255, 255));
+        buSacar.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buSacar.setForeground(new java.awt.Color(0, 0, 51));
         buSacar.setText("Sacar");
+        buSacar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSacarActionPerformed(evt);
             }
         });
+        getContentPane().add(buSacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 212, -1));
 
-        buComprarCri.setBackground(new java.awt.Color(255, 255, 255));
-        buComprarCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buComprarCri.setForeground(new java.awt.Color(255, 0, 0));
+        buComprarCri.setBackground(new java.awt.Color(0, 255, 255));
+        buComprarCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buComprarCri.setForeground(new java.awt.Color(0, 0, 51));
         buComprarCri.setText("Comprar Criptomoedas");
+        buComprarCri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buComprarCri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buComprarCriActionPerformed(evt);
             }
         });
+        getContentPane().add(buComprarCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
-        buVenderCri.setBackground(new java.awt.Color(255, 255, 255));
-        buVenderCri.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buVenderCri.setForeground(new java.awt.Color(255, 0, 0));
+        buVenderCri.setBackground(new java.awt.Color(0, 255, 255));
+        buVenderCri.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buVenderCri.setForeground(new java.awt.Color(0, 0, 51));
         buVenderCri.setText("Vender Criptomoedas");
+        buVenderCri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buVenderCri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buVenderCriActionPerformed(evt);
             }
         });
+        getContentPane().add(buVenderCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 212, -1));
 
-        buAtualizarCota.setBackground(new java.awt.Color(255, 255, 255));
-        buAtualizarCota.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buAtualizarCota.setForeground(new java.awt.Color(255, 0, 0));
+        buAtualizarCota.setBackground(new java.awt.Color(0, 255, 255));
+        buAtualizarCota.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buAtualizarCota.setForeground(new java.awt.Color(0, 0, 51));
         buAtualizarCota.setText("Atualizar cotações");
+        buAtualizarCota.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buAtualizarCota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buAtualizarCotaActionPerformed(evt);
             }
         });
+        getContentPane().add(buAtualizarCota, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 207, -1));
 
-        buSair.setBackground(new java.awt.Color(255, 255, 255));
-        buSair.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buSair.setForeground(new java.awt.Color(255, 0, 0));
+        buSair.setBackground(new java.awt.Color(0, 255, 255));
+        buSair.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
+        buSair.setForeground(new java.awt.Color(0, 0, 51));
         buSair.setText("Sair");
+        buSair.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buSairActionPerformed(evt);
             }
         });
+        getContentPane().add(buSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 94, -1));
 
         jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText("CPF:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Nome:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLCpf.setBackground(new java.awt.Color(102, 102, 102));
-        jLCpf.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        jLCpf.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jLCpf.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLCpf.setForeground(new java.awt.Color(255, 255, 255));
+        jLCpf.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 126, 19));
 
         jLNome.setBackground(new java.awt.Color(102, 102, 102));
-        jLNome.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        jLNome.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jLNome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLNome.setForeground(new java.awt.Color(255, 255, 255));
+        jLNome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 126, 19));
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("Bitcoin:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Ethereum:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Ripple:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
 
         jLBitcoin.setBackground(new java.awt.Color(102, 102, 102));
-        jLBitcoin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLBitcoin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLBitcoin.setForeground(new java.awt.Color(255, 255, 255));
+        jLBitcoin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 102, 18));
 
-        jLEthereum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLEthereum.setBackground(new java.awt.Color(102, 102, 102));
+        jLEthereum.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLEthereum.setForeground(new java.awt.Color(255, 255, 255));
+        jLEthereum.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLEthereum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 102, 18));
 
-        jLRipple.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLRipple.setBackground(new java.awt.Color(102, 102, 102));
+        jLRipple.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLRipple.setForeground(new java.awt.Color(255, 255, 255));
+        jLRipple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLRipple.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 102, 18));
 
         jLabel9.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLabel9.setText("R$");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, -1, 18));
 
         jLabel10.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLabel10.setText("R$");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, 18));
 
         jLabel11.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
         jLabel11.setText("R$");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, -1, 18));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(jLNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLEthereum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLRipple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buConsultarExtrato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buConsultarSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buComprarCri))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buSacar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buVenderCri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buDepositar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buAtualizarCota, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116)))
-                .addGap(0, 99, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buSair, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLBitcoin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addComponent(jLabel1))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(2, 2, 2)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(7, 7, 7)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jLNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel2)))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(buDepositar)
-                                    .addGap(35, 35, 35)
-                                    .addComponent(buSacar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(120, 120, 120)
-                                    .addComponent(buVenderCri)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buConsultarSaldo)
-                                .addGap(35, 35, 35)
-                                .addComponent(buConsultarExtrato)
-                                .addGap(29, 29, 29)
-                                .addComponent(buComprarCri)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(buAtualizarCota)
-                                .addGap(46, 46, 46))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buSair))))))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoMenu.jpeg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -547,6 +468,7 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

@@ -82,71 +82,62 @@ public class DepositarFrame extends javax.swing.JFrame {
         jLValorAtual = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         textValorDeposito = new javax.swing.JTextField();
+        jLValorAtualRef1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        buMenu.setBackground(new java.awt.Color(255, 255, 255));
-        buMenu.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buMenu.setForeground(new java.awt.Color(255, 0, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buMenu.setBackground(new java.awt.Color(51, 255, 255));
+        buMenu.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
+        buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 131, -1));
 
-        buDepositar.setBackground(new java.awt.Color(255, 255, 255));
-        buDepositar.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buDepositar.setForeground(new java.awt.Color(255, 0, 0));
+        buDepositar.setBackground(new java.awt.Color(51, 255, 255));
+        buDepositar.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
+        buDepositar.setForeground(new java.awt.Color(0, 0, 51));
         buDepositar.setText("Depositar");
+        buDepositar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buDepositarActionPerformed(evt);
             }
         });
+        getContentPane().add(buDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 131, -1));
 
-        jLValorAtualRef.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-        jLValorAtualRef.setForeground(new java.awt.Color(0, 0, 0));
-        jLValorAtualRef.setText("Valor atual:");
+        jLValorAtualRef.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        jLValorAtualRef.setForeground(new java.awt.Color(204, 204, 204));
+        jLValorAtualRef.setText("Saldo:");
+        getContentPane().add(jLValorAtualRef, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLValorAtual.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLValorAtual.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jLValorAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 110, 21));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Digite o valor de depósito no campo abaixo:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLValorAtualRef)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLValorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(buDepositar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textValorDeposito))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLValorAtualRef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLValorAtual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(textValorDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buMenu)
-                    .addComponent(buDepositar))
-                .addContainerGap())
-        );
+        textValorDeposito.setBackground(new java.awt.Color(102, 102, 102));
+        textValorDeposito.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        textValorDeposito.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(textValorDeposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 333, -1));
+
+        jLValorAtualRef1.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        jLValorAtualRef1.setForeground(new java.awt.Color(204, 204, 204));
+        jLValorAtualRef1.setText("OBS: utilize \".\" para números com vírgula.");
+        getContentPane().add(jLValorAtualRef1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoMenu.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
 
         pack();
         setLocationRelativeTo(null);
@@ -167,6 +158,8 @@ public class DepositarFrame extends javax.swing.JFrame {
     private javax.swing.JButton buMenu;
     private javax.swing.JLabel jLValorAtual;
     private javax.swing.JLabel jLValorAtualRef;
+    private javax.swing.JLabel jLValorAtualRef1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField textValorDeposito;
     // End of variables declaration//GEN-END:variables

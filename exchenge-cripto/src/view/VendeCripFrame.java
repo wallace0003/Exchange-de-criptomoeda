@@ -200,202 +200,175 @@ public class VendeCripFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLBitcoin = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Ethereum:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Bitcoin:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
-        buVenderEthereum.setBackground(new java.awt.Color(255, 255, 255));
-        buVenderEthereum.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        buVenderEthereum.setForeground(new java.awt.Color(255, 0, 0));
+        buVenderEthereum.setBackground(new java.awt.Color(51, 255, 255));
+        buVenderEthereum.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        buVenderEthereum.setForeground(new java.awt.Color(0, 0, 51));
         buVenderEthereum.setText("Vender");
+        buVenderEthereum.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buVenderEthereum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buVenderEthereumActionPerformed(evt);
             }
         });
+        getContentPane().add(buVenderEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 90, -1));
 
-        buVenderRipple.setBackground(new java.awt.Color(255, 255, 255));
-        buVenderRipple.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        buVenderRipple.setForeground(new java.awt.Color(255, 0, 0));
+        buVenderRipple.setBackground(new java.awt.Color(51, 255, 255));
+        buVenderRipple.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        buVenderRipple.setForeground(new java.awt.Color(0, 0, 51));
         buVenderRipple.setText("Vender");
+        buVenderRipple.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buVenderRipple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buVenderRippleActionPerformed(evt);
             }
         });
+        getContentPane().add(buVenderRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 90, -1));
 
-        buVenderBitcoin.setBackground(new java.awt.Color(255, 255, 255));
-        buVenderBitcoin.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        buVenderBitcoin.setForeground(new java.awt.Color(255, 0, 0));
+        buVenderBitcoin.setBackground(new java.awt.Color(51, 255, 255));
+        buVenderBitcoin.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        buVenderBitcoin.setForeground(new java.awt.Color(0, 0, 51));
         buVenderBitcoin.setText("Vender");
+        buVenderBitcoin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buVenderBitcoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buVenderBitcoinActionPerformed(evt);
             }
         });
+        getContentPane().add(buVenderBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 90, -1));
 
-        buMenu.setBackground(new java.awt.Color(255, 255, 255));
-        buMenu.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        buMenu.setForeground(new java.awt.Color(255, 0, 0));
+        buMenu.setBackground(new java.awt.Color(51, 255, 255));
+        buMenu.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 415, 160, 30));
 
-        textValorBitcoin.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+        textValorBitcoin.setBackground(new java.awt.Color(102, 102, 102));
+        textValorBitcoin.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        textValorBitcoin.setForeground(new java.awt.Color(255, 255, 255));
         textValorBitcoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textValorBitcoinActionPerformed(evt);
             }
         });
+        getContentPane().add(textValorBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 121, -1));
 
-        textValorEthereum.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+        textValorEthereum.setBackground(new java.awt.Color(102, 102, 102));
+        textValorEthereum.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        textValorEthereum.setForeground(new java.awt.Color(255, 255, 255));
+        textValorEthereum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textValorEthereumActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textValorEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 121, -1));
 
-        textValorRipple.setFont(new java.awt.Font("URW Bookman", 0, 15)); // NOI18N
+        textValorRipple.setBackground(new java.awt.Color(102, 102, 102));
+        textValorRipple.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        textValorRipple.setForeground(new java.awt.Color(255, 255, 255));
         textValorRipple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textValorRippleActionPerformed(evt);
             }
         });
+        getContentPane().add(textValorRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 121, -1));
 
-        jLEthereum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLEthereum.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLEthereum.setForeground(new java.awt.Color(255, 255, 255));
         jLEthereum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 102, 20));
 
-        jLRipple.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLRipple.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLRipple.setForeground(new java.awt.Color(255, 255, 255));
         jLRipple.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 102, 20));
 
-        jLabel9.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("R$");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 20));
 
-        jLabel10.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("R$");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel7.setFont(new java.awt.Font("URW Bookman", 1, 18)); // NOI18N
-        jLabel7.setText("Cotação de cada criptomoeda ->");
+        jLabel7.setFont(new java.awt.Font("Dialog", 3, 25)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Cotação Criptomoedas → ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("R$");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, -1, 18));
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Bitcoin:");
+        jLabel4.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("BTC:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setText("Ethereum:");
+        jLabel5.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("ETH:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel6.setText("Ripple:");
+        jLabel6.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("XRP:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, -1, -1));
 
-        jLBitcoin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLBitcoin.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLBitcoin.setForeground(new java.awt.Color(255, 255, 255));
         jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 102, 20));
 
-        jLabel8.setFont(new java.awt.Font("URW Bookman", 1, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Dialog", 3, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Ripple:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buMenu, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel3))
-                                        .addGap(1, 1, 1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(buVenderRipple)
-                                    .addComponent(buVenderBitcoin)
-                                    .addComponent(buVenderEthereum)))
-                            .addComponent(jLabel7))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLEthereum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLRipple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(jLabel11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLBitcoin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel7))))
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                                .addComponent(jLRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buVenderEthereum)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buVenderRipple)
-                    .addComponent(textValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buVenderBitcoin)
-                    .addComponent(textValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(71, 71, 71)
-                .addComponent(buMenu))
-        );
+        jLabel12.setFont(new java.awt.Font("Dialog", 3, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("ETH");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 3, 10)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("XRP");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 3, 10)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("BTC");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoExchenge (1).jpeg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -425,6 +398,10 @@ public class VendeCripFrame extends javax.swing.JFrame {
         cLogin.venderCripParaMenu();
     }//GEN-LAST:event_buMenuActionPerformed
 
+    private void textValorEthereumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textValorEthereumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textValorEthereumActionPerformed
+
 
     private ControllerLogin cLogin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -438,6 +415,10 @@ public class VendeCripFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

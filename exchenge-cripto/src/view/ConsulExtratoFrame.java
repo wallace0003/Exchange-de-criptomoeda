@@ -3,9 +3,9 @@ package view;
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 
 public class ConsulExtratoFrame extends javax.swing.JFrame {
@@ -14,6 +14,15 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         initComponents();
         this.cLogin = cLogin;
     }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
+    }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+    
 
     public void setBuConsultarExtrato(JButton buConsultarExtrato) {
         this.buConsultarExtrato = buConsultarExtrato;
@@ -43,11 +52,6 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         this.textAreaExtrato = textAreaExtrato;
     }
 
-    public void setTextSenha(JTextField textSenha) {
-        this.textSenha = textSenha;
-    }
-    
-
     public JButton getBuConsultarExtrato() {
         return buConsultarExtrato;
     }
@@ -76,13 +80,6 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         return textAreaExtrato;
     }
 
-    public JTextField getTextSenha() {
-        return textSenha;
-    }
-    
-    
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -90,85 +87,67 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        textSenha = new javax.swing.JTextField();
         buConsultarExtrato = new javax.swing.JButton();
         buMenu = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         textAreaExtrato = new javax.swing.JTextArea();
+        textSenha = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setBorder(new javax.swing.border.MatteBorder(null));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel1.setText("Senha:");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buConsultarExtrato.setBackground(new java.awt.Color(255, 255, 255));
-        buConsultarExtrato.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buConsultarExtrato.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Senha:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 24));
+
+        buConsultarExtrato.setBackground(new java.awt.Color(102, 255, 255));
+        buConsultarExtrato.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
+        buConsultarExtrato.setForeground(new java.awt.Color(0, 0, 51));
         buConsultarExtrato.setText("Consultar extrato");
+        buConsultarExtrato.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buConsultarExtrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buConsultarExtratoActionPerformed(evt);
             }
         });
+        getContentPane().add(buConsultarExtrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 188, -1));
 
-        buMenu.setBackground(new java.awt.Color(255, 255, 255));
-        buMenu.setFont(new java.awt.Font("URW Bookman", 3, 14)); // NOI18N
-        buMenu.setForeground(new java.awt.Color(255, 0, 0));
+        buMenu.setBackground(new java.awt.Color(102, 255, 255));
+        buMenu.setFont(new java.awt.Font("Dialog", 3, 20)); // NOI18N
+        buMenu.setForeground(new java.awt.Color(0, 0, 51));
         buMenu.setText("Menu");
+        buMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(buMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 188, -1));
 
+        textAreaExtrato.setBackground(new java.awt.Color(0, 0, 51));
         textAreaExtrato.setColumns(20);
-        textAreaExtrato.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        textAreaExtrato.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        textAreaExtrato.setForeground(new java.awt.Color(255, 255, 255));
         textAreaExtrato.setRows(5);
-        textAreaExtrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 0)));
+        textAreaExtrato.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane2.setViewportView(textAreaExtrato);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 93, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(buMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buConsultarExtrato, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buConsultarExtrato)
-                    .addComponent(buMenu))
-                .addContainerGap())
-        );
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 303, 290));
+
+        textSenha.setBackground(new java.awt.Color(102, 102, 102));
+        textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        textSenha.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 193, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoSaldo .jpeg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 487));
 
         pack();
         setLocationRelativeTo(null);
@@ -188,10 +167,11 @@ public class ConsulExtratoFrame extends javax.swing.JFrame {
     private javax.swing.JButton buConsultarExtrato;
     private javax.swing.JButton buMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea textAreaExtrato;
-    private javax.swing.JTextField textSenha;
+    private javax.swing.JPasswordField textSenha;
     // End of variables declaration//GEN-END:variables
 }

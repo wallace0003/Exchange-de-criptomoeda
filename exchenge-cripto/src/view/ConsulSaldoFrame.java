@@ -1,11 +1,9 @@
-
 package view;
 
 import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 
 public class ConsulSaldoFrame extends javax.swing.JFrame {
@@ -14,6 +12,14 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     public ConsulSaldoFrame(ControllerLogin cLogin) {
         initComponents();
         this.cLogin = cLogin;
+    }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
     }
 
     public void setcLogin(ControllerLogin cLogin) {
@@ -28,10 +34,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         this.jBMenu = jBMenu;
     }
 
-    public void setjLNome(JLabel jLNome) {
-        this.jLNome = jLNome;
-    }
-
     public void setjLValorBitcoin(JLabel jLValorBitcoin) {
         this.jLValorBitcoin = jLValorBitcoin;
     }
@@ -42,12 +44,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
 
     public void setjLValorRipple(JLabel jLValorRipple) {
         this.jLValorRipple = jLValorRipple;
-    }
-
-    
-
-    public void setjLabel11(JLabel jLabel11) {
-        this.jLabel11 = jLabel11;
     }
 
     public void setjLabel2(JLabel jLabel2) {
@@ -78,14 +74,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         this.jLvalorReais = jLvalorReais;
     }
 
-    public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
-
-    public void setTextSenha(JTextField textSenha) {
-        this.textSenha = textSenha;
-    }
-
     public ControllerLogin getcLogin() {
         return cLogin;
     }
@@ -98,10 +86,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         return jBMenu;
     }
 
-    public JLabel getjLNome() {
-        return jLNome;
-    }
-
     public JLabel getjLValorBitcoin() {
         return jLValorBitcoin;
     }
@@ -112,10 +96,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
 
     public JLabel getjLValorRipple() {
         return jLValorRipple;
-    }
-
-    public JLabel getjLabel11() {
-        return jLabel11;
     }
 
     public JLabel getjLabel2() {
@@ -146,217 +126,115 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
         return jLvalorReais;
     }
 
-    public JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public JTextField getTextSenha() {
-        return textSenha;
-    }
     
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLNome = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLvalorReais = new javax.swing.JLabel();
-        jLValorRipple = new javax.swing.JLabel();
-        jLValorEthereum = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLValorBitcoin = new javax.swing.JLabel();
         jBMenu = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        textSenha = new javax.swing.JTextField();
         jBConsultarSaldo = new javax.swing.JButton();
+        textSenha = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jLvalorReais = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLValorBitcoin = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLValorEthereum = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLValorRipple = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        jLNome.setBackground(new java.awt.Color(255, 255, 255));
-        jLNome.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLNome.setForeground(new java.awt.Color(255, 0, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 376, -1, -1));
 
-        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
-
-        jLabel4.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Reais:");
-
-        jLabel5.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Bitcoin:");
-
-        jLabel6.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Ethereum:");
-
-        jLabel7.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Ripple:");
-
-        jLvalorReais.setBackground(new java.awt.Color(255, 255, 255));
-        jLvalorReais.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-
-        jLValorRipple.setBackground(new java.awt.Color(255, 255, 255));
-        jLValorRipple.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-
-        jLValorEthereum.setBackground(new java.awt.Color(255, 255, 255));
-        jLValorEthereum.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLValorBitcoin.setBackground(new java.awt.Color(255, 255, 255));
-        jLValorBitcoin.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLValorEthereum, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(30, 30, 30)
-                            .addComponent(jLValorRipple, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5))
-                            .addGap(24, 24, 24)
-                            .addComponent(jLvalorReais, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(53, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(49, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(190, 190, 190)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLvalorReais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLValorBitcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLValorEthereum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLValorRipple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(41, 41, 41))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(153, 153, 153)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(21, 21, 21)))
-        );
-
-        jBMenu.setBackground(new java.awt.Color(255, 255, 255));
-        jBMenu.setFont(new java.awt.Font("URW Bookman", 0, 14)); // NOI18N
-        jBMenu.setForeground(new java.awt.Color(255, 0, 0));
+        jBMenu.setBackground(new java.awt.Color(51, 255, 255));
+        jBMenu.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        jBMenu.setForeground(new java.awt.Color(0, 0, 51));
         jBMenu.setText("Menu");
+        jBMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(jBMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 170, -1));
 
-        jLabel8.setFont(new java.awt.Font("URW Bookman", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Senha:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
 
-        textSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSenhaActionPerformed(evt);
-            }
-        });
-
-        jBConsultarSaldo.setBackground(new java.awt.Color(255, 255, 255));
-        jBConsultarSaldo.setFont(new java.awt.Font("URW Bookman", 0, 14)); // NOI18N
-        jBConsultarSaldo.setForeground(new java.awt.Color(255, 0, 0));
+        jBConsultarSaldo.setBackground(new java.awt.Color(51, 255, 255));
+        jBConsultarSaldo.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        jBConsultarSaldo.setForeground(new java.awt.Color(0, 0, 51));
         jBConsultarSaldo.setText("Consultar saldo");
+        jBConsultarSaldo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBConsultarSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBConsultarSaldoActionPerformed(evt);
             }
         });
+        getContentPane().add(jBConsultarSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 170, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 54, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBMenu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBConsultarSaldo)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(textSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBMenu)
-                    .addComponent(jBConsultarSaldo)))
-        );
+        textSenha.setBackground(new java.awt.Color(102, 102, 102));
+        textSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        textSenha.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 120, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Reais:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, -1));
+
+        jLvalorReais.setBackground(new java.awt.Color(255, 255, 255));
+        jLvalorReais.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLvalorReais.setForeground(new java.awt.Color(255, 255, 255));
+        jLvalorReais.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLvalorReais, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 93, 20));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Bitcoin:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
+
+        jLValorBitcoin.setBackground(new java.awt.Color(255, 255, 255));
+        jLValorBitcoin.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLValorBitcoin.setForeground(new java.awt.Color(255, 255, 255));
+        jLValorBitcoin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLValorBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 93, 20));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("Ethereum:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+
+        jLValorEthereum.setBackground(new java.awt.Color(255, 255, 255));
+        jLValorEthereum.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLValorEthereum.setForeground(new java.awt.Color(255, 255, 255));
+        jLValorEthereum.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLValorEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 93, 20));
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Ripple:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
+
+        jLValorRipple.setBackground(new java.awt.Color(255, 255, 255));
+        jLValorRipple.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLValorRipple.setForeground(new java.awt.Color(255, 255, 255));
+        jLValorRipple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLValorRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 93, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoSaldo (1).jpeg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 360));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void textSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSenhaActionPerformed
-        
-    }//GEN-LAST:event_textSenhaActionPerformed
 
     private void jBConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultarSaldoActionPerformed
         cLogin.exibeSaldo();
@@ -371,11 +249,10 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBConsultarSaldo;
     private javax.swing.JButton jBMenu;
-    private javax.swing.JLabel jLNome;
     private javax.swing.JLabel jLValorBitcoin;
     private javax.swing.JLabel jLValorEthereum;
     private javax.swing.JLabel jLValorRipple;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -383,7 +260,6 @@ public class ConsulSaldoFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLvalorReais;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textSenha;
+    private javax.swing.JPasswordField textSenha;
     // End of variables declaration//GEN-END:variables
 }
