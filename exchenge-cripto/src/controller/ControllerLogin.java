@@ -243,6 +243,8 @@ public class ControllerLogin {
                                     setText(String.format("%.8f", saldoRipple));
                 consulSaldoFrame.getjLValorEthereum().
                                   setText(String.format("%.8f", saldoEthereum));
+                //Apagando a senha digitada
+                consulSaldoFrame.getTextSenha().setText("");
             }else {
                 JOptionPane.showMessageDialog(consulSaldoFrame, 
                         "Senha incorreta! Tente novamente.", "Erro", 
@@ -408,23 +410,30 @@ public class ControllerLogin {
                     extrato.append("Hora: ").append
                     (extratoRes.getString("hora")).append("\n");
                     extrato.append("Operação: ")
-                    .append(extratoRes.getString("sinal")).append(" ")
-                    .append(extratoRes.getString("valor")).append(" ")
-                    .append(extratoRes.getString("tipomoeda")).append("\n");
+                            .append(extratoRes.getString("sinal")).append(" ")
+                            .append(extratoRes.getString("valor")).append(" ")
+                            .append(extratoRes.getString("tipomoeda"))
+                            .append("\n");
                     extrato.append("Cotação: ").append
-                    (extratoRes.getDouble("ct")).append("\n");
+                    (String.format("%.2f", extratoRes.getDouble("ct")))
+                    .append("\n");
                     extrato.append("Taxa: ").append
-                    (extratoRes.getDouble("taxa")).append("\n");
-                    extrato.append("Saldo Real: ").append
-                    (extratoRes.getDouble("real")).append("\n");
-                    extrato.append("Saldo Bitcoin: ")
-                    .append(extratoRes.getDouble("bitcoin")).append("\n");
-                    extrato.append("Saldo Ethereum: ")
-                    .append(extratoRes.getDouble("ethereum")).append("\n");
-                    extrato.append("Saldo Ripple: ")
-                    .append(extratoRes.getDouble("ripple")).append("\n");
-                    extrato.append("--------------------------"
-                            + "--------------------------------------------\n");
+                    (String.format("%.2f", extratoRes.getDouble("taxa")))
+                    .append("\n");
+                    extrato.append("Saldo Real: ").
+                    append(String.format("%.2f", extratoRes.getDouble("real")))
+                    .append("\n");
+                    extrato.append("Saldo Bitcoin: ").append
+                    (String.format("%.8f", extratoRes.getDouble("bitcoin")))
+                    .append("\n");
+                    extrato.append("Saldo Ethereum: ").append
+                    (String.format("%.8f", extratoRes.getDouble("ethereum")))
+                    .append("\n");
+                    extrato.append("Saldo Ripple: ").append
+                    (String.format("%.8f", extratoRes.getDouble("ripple")))
+                    .append("\n");
+                    extrato.append("--------------------------------"
+                                   + "----------------------------\n");
                 }
                 consulExtratoFrame.getTextAreaExtrato()
                                    .setText(extrato.toString());
@@ -620,6 +629,9 @@ public class ControllerLogin {
     public void comprarCripParaMenu() {
         comprarCripFrame.setVisible(false);
         menuFrame.setVisible(true);
+        comprarCripFrame.getTextValorBitcoin().setText("");
+        comprarCripFrame.getTextValorEthereum().setText("");
+        comprarCripFrame.getTextValorRipple().setText("");
     }
     
     //Comprar bitcoin
@@ -708,6 +720,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Compra realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    comprarCripFrame.getTextValorBitcoin().setText("");
                 } else {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Erro ao obter o preço do Bitcoin.", "Erro", 
@@ -808,6 +821,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Compra realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    comprarCripFrame.getTextValorEthereum().setText("");
                 } else {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Erro ao obter o preço do Ethereum", "Erro", 
@@ -901,6 +915,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Compra realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    comprarCripFrame.getTextValorRipple().setText("");
                 } else {
                     JOptionPane.showMessageDialog(comprarCripFrame, 
                         "Erro ao obter o preço do Ripple.", "Erro", 
@@ -919,7 +934,6 @@ public class ControllerLogin {
     }
     
     //Controller para vender Cripto.
-    
     public void menuParaVenderCripto(){
         String senhaFornecida = JOptionPane.showInputDialog(vendeCripFrame, 
             "Digite sua senha para continuar:", "Verificação de Senha", 
@@ -1064,6 +1078,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Venda realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    vendeCripFrame.getTextValorBitcoin().setText("");
                 } else {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Erro ao obter o preço do Bitcoin.", "Erro", 
@@ -1082,7 +1097,8 @@ public class ControllerLogin {
     }
     
     public void venderEthereum() {
-        String valorEthereumStr = vendeCripFrame.getTextValorEthereum().getText();
+        String valorEthereumStr = vendeCripFrame.getTextValorEthereum()
+                                  .getText();
 
         if (valorEthereumStr == null || valorEthereumStr.isEmpty()) {
             JOptionPane.showMessageDialog(vendeCripFrame, 
@@ -1156,6 +1172,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Venda de Ethereum realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    vendeCripFrame.getTextValorEthereum().setText("");
                 } else {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Erro ao obter o preço do Ethereum.", "Erro", 
@@ -1246,6 +1263,7 @@ public class ControllerLogin {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Venda de Ripple realizada com sucesso!", "Sucesso", 
                         JOptionPane.INFORMATION_MESSAGE);
+                    vendeCripFrame.getTextValorRipple().setText("");
                 } else {
                     JOptionPane.showMessageDialog(vendeCripFrame, 
                         "Erro ao obter o preço do Ripple.", "Erro", 
