@@ -408,23 +408,28 @@ public class ControllerLogin {
                     extrato.append("Hora: ").append
                     (extratoRes.getString("hora")).append("\n");
                     extrato.append("Operação: ")
-                    .append(extratoRes.getString("sinal")).append(" ")
-                    .append(extratoRes.getString("valor")).append(" ")
-                    .append(extratoRes.getString("tipomoeda")).append("\n");
+                            .append(extratoRes.getString("sinal")).append(" ")
+                            .append(extratoRes.getString("valor")).append(" ")
+                            .append(extratoRes.getString("tipomoeda")).append("\n");
                     extrato.append("Cotação: ").append
-                    (extratoRes.getDouble("ct")).append("\n");
+                    (String.format("%.2f", extratoRes.getDouble("ct"))).append("\n");
                     extrato.append("Taxa: ").append
-                    (extratoRes.getDouble("taxa")).append("\n");
-                    extrato.append("Saldo Real: ").append
-                    (extratoRes.getDouble("real")).append("\n");
-                    extrato.append("Saldo Bitcoin: ")
-                    .append(extratoRes.getDouble("bitcoin")).append("\n");
-                    extrato.append("Saldo Ethereum: ")
-                    .append(extratoRes.getDouble("ethereum")).append("\n");
-                    extrato.append("Saldo Ripple: ")
-                    .append(extratoRes.getDouble("ripple")).append("\n");
-                    extrato.append("--------------------------"
-                            + "--------------------------------------------\n");
+                    (String.format("%.2f", extratoRes.getDouble("taxa")))
+                    .append("\n");
+                    extrato.append("Saldo Real: ").
+                    append(String.format("%.2f", extratoRes.getDouble("real")))
+                    .append("\n");
+                    extrato.append("Saldo Bitcoin: ").append
+                    (String.format("%.8f", extratoRes.getDouble("bitcoin")))
+                    .append("\n");
+                    extrato.append("Saldo Ethereum: ").append
+                    (String.format("%.8f", extratoRes.getDouble("ethereum")))
+                    .append("\n");
+                    extrato.append("Saldo Ripple: ").append
+                    (String.format("%.8f", extratoRes.getDouble("ripple")))
+                    .append("\n");
+                    extrato.append("--------------------------------"
+                                   + "----------------------------\n");
                 }
                 consulExtratoFrame.getTextAreaExtrato()
                                    .setText(extrato.toString());
