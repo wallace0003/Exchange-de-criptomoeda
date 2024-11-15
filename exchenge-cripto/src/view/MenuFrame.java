@@ -334,75 +334,78 @@ public class MenuFrame extends javax.swing.JFrame {
                 buSairActionPerformed(evt);
             }
         });
-        getContentPane().add(buSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 94, -1));
+        getContentPane().add(buSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 110, -1));
 
-        jLabel1.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CPF:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("URW Bookman", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLCpf.setBackground(new java.awt.Color(102, 102, 102));
+        jLCpf.setBackground(new java.awt.Color(0, 153, 153));
         jLCpf.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLCpf.setForeground(new java.awt.Color(255, 255, 255));
-        jLCpf.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLCpf.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 126, 19));
 
-        jLNome.setBackground(new java.awt.Color(102, 102, 102));
+        jLNome.setBackground(new java.awt.Color(0, 153, 153));
         jLNome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLNome.setForeground(new java.awt.Color(255, 255, 255));
-        jLNome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLNome.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 126, 19));
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Bitcoin:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ethereum:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ripple:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, -1, -1));
 
-        jLBitcoin.setBackground(new java.awt.Color(102, 102, 102));
+        jLBitcoin.setBackground(new java.awt.Color(0, 153, 153));
         jLBitcoin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLBitcoin.setForeground(new java.awt.Color(255, 255, 255));
-        jLBitcoin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLBitcoin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLBitcoin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLBitcoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 102, 18));
 
-        jLEthereum.setBackground(new java.awt.Color(102, 102, 102));
+        jLEthereum.setBackground(new java.awt.Color(0, 153, 153));
         jLEthereum.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLEthereum.setForeground(new java.awt.Color(255, 255, 255));
-        jLEthereum.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLEthereum.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLEthereum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLEthereum, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 102, 18));
 
-        jLRipple.setBackground(new java.awt.Color(102, 102, 102));
+        jLRipple.setBackground(new java.awt.Color(0, 153, 153));
         jLRipple.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLRipple.setForeground(new java.awt.Color(255, 255, 255));
-        jLRipple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLRipple.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLRipple.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLRipple, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 102, 18));
 
-        jLabel9.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("URW Bookman", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("R$");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, -1, 18));
 
-        jLabel10.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("URW Bookman", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("R$");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, 18));
 
-        jLabel11.setFont(new java.awt.Font("URW Bookman", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("URW Bookman", 1, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("R$");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, -1, 18));
 
